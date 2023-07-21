@@ -1,1 +1,1 @@
-# bootcamp
+# Omadbek Jaloldinov
