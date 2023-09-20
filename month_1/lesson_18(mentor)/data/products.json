@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "name": "apple",
+    "price": 5000,
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "orange",
+    "price": 3000,
+    "category_id": 1
+  },
+  {
+    "id": 3,
+    "name": "banana",
+    "price": 2000,
+    "category_id": 1
+  },
+  {
+    "id": 4,
+    "name": "grape",
+    "price": 4000,
+    "category_id": 1
+  },
+  {
+    "id": 5,
+    "name": "strawberry",
+    "price": 6000,
+    "category_id": 1
+  },
+  {
+    "id": 6,
+    "name": "watermelon",
+    "price": 8000,
+    "category_id": 1
+  },
+  {
+    "id": 7,
+    "name": "carrot",
+    "price": 1500,
+    "category_id": 1
+  },
+  {
+    "id": 8,
+    "name": "broccoli",
+    "price": 2500,
+    "category_id": 1
+  },
+  {
+    "id": 9,
+    "name": "tomato",
+    "price": 3500,
+    "category_id": 1
+  },
+  {
+    "id": 10,
+    "name": "cucumber",
+    "price": 1800,
+    "category_id": 1
+  },
+  {
+    "id": 11,
+    "name": "toy car",
+    "price": 20000,
+    "category_id": 2
+  },
+  {
+    "id": 12,
+    "name": "puzzle",
+    "price": 15000,
+    "category_id": 2
+  },
+  {
+    "id": 13,
+    "name": "dolls",
+    "price": 12000,
+    "category_id": 2
+  },
+  {
+    "id": 14,
+    "name": "action figure",
+    "price": 18000,
+    "category_id": 2
+  },
+  {
+    "id": 15,
+    "name": "board game",
+    "price": 25000,
+    "category_id": 2
+  },
+  {
+    "id": 16,
+    "name": "television",
+    "price": 500000,
+    "category_id": 3
+  },
+  {
+    "id": 17,
+    "name": "laptop",
+    "price": 800000,
+    "category_id": 3
+  },
+  {
+    "id": 18,
+    "name": "smartphone",
+    "price": 120000,
+    "category_id": 3
+  },
+  {
+    "id": 19,
+    "name": "headphones",
+    "price": 50000,
+    "category_id": 3
+  },
+  {
+    "id": 20,
+    "name": "camera",
+    "price": 300000,
+    "category_id": 3
+  },
+  {
+    "id": 21,
+    "name": "t-shirt",
+    "price": 5000,
+    "category_id": 4
+  },
+  {
+    "id": 22,
+    "name": "jeans",
+    "price": 8000,
+    "category_id": 4
+  },
+  {
+    "id": 23,
+    "name": "dress",
+    "price": 10000,
+    "category_id": 4
+  },
+  {
+    "id": 24,
+    "name": "sweater",
+    "price": 12000,
+    "category_id": 4
+  },
+  {
+    "id": 25,
+    "name": "coat",
+    "price": 25000,
+    "category_id": 4
+  },
+  {
+    "id": 26,
+    "name": "novel",
+    "price": 10000,
+    "category_id": 5
+  },
+  {
+    "id": 27,
+    "name": "poetry book",
+    "price": 8000,
+    "category_id": 5
+  },
+  {
+    "id": 28,
+    "name": "biography",
+    "price": 12000,
+    "category_id": 5
+  },
+  {
+    "id": 29,
+    "name": "fantasy book",
+    "price": 50000
+  },
+  {
+    "id": 30,
+    "name": "knife set",
+    "price": 5000,
+    "category_id": 6
+  },
+  {
+    "id": 31,
+    "name": "cutting board",
+    "price": 2000,
+    "category_id": 6
+  },
+  {
+    "id": 32,
+    "name": "mixing bowls",
+    "price": 3000,
+    "category_id": 6
+  },
+  {
+    "id": 33,
+    "name": "measuring cups",
+    "price": 1500,
+    "category_id": 6
+  },
+  {
+    "id": 34,
+    "name": "whisk",
+    "price": 1000,
+    "category_id": 6
+  },
+  {
+    "id": 35,
+    "name": "spatula",
+    "price": 1500,
+    "category_id": 6
+  },
+  {
+    "id": 36,
+    "name": "peeler",
+    "price": 800,
+    "category_id": 6
+  },
+  {
+    "id": 37,
+    "name": "grater",
+    "price": 1200,
+    "category_id": 6
+  },
+  {
+    "id": 38,
+    "name": "can opener",
+    "price": 1000,
+    "category_id": 6
+  },
+  {
+    "id": 39,
+    "name": "kitchen scale",
+    "price": 2500,
+    "category_id": 6
+  }
+  
+]

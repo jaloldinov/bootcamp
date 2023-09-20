@@ -1,0 +1,10 @@
+migrate create -ext sql -dir ./migrations -seq -digits 3 create_tables
+
+migrate -path ./migrations -database 'postgres://postgres:Muhammad@localhost:5432/postgres?sslmode=disable' upmigrate -path ./migrations -database 'postgres://postgres:Muhammad@localhost:5432/postgres?sslmode=disable' up
+
+
+Top ishchilarni chiqarish: berilgan vaqt oralig'ida type dynamic:cashier bo'lsa top kassirlarni, 
+shopAssistant bo'lsa top shop assistantlarni qaytarsin:
+
+   Name      Branch        Earned_Sum
+   Abbos     Chilonzor    10000000

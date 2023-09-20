@@ -1,0 +1,55 @@
+[
+  {
+    "Id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Client_name": "Sardor",
+    "Branch_id": "819a6d0a-cf98-44a4-84b3-f8503e846ded",
+    "Shop_asissent_id": "",
+    "Cashier_id": "7fb8fe47-3948-447c-957e-f187736ec654",
+    "Price": 100.1,
+    "Payment_Type": "card",
+    "Status": "success",
+    "Created_at": "2023-08-08 18:47:35"
+  },
+  {
+    "Id": "362bcff2-569f-4086-abd2-61dcba738a0d",
+    "Client_name": "Omadbek",
+    "Branch_id": "0104c39f-6ba6-4a49-8100-a90361154613",
+    "Shop_asissent_id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Cashier_id": "0",
+    "Price": 23423.4,
+    "Payment_Type": "card",
+    "Status": "success",
+    "Created_at": "2023-08-11 18:25:11"
+  }, 
+  {
+    "Id": "362bcff2-569f-4086-abw2-61dcba738a0d",
+    "Client_name": "Shohruh",
+    "Branch_id": "0104c39f-6ba6-4a49-8100-a90361154613",
+    "Shop_asissent_id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Cashier_id": "0",
+    "Price": 23423.4,
+    "Payment_Type": "card",
+    "Status": "success",
+    "Created_at": "2023-08-11 18:25:11"
+  }, {
+    "Id": "362bcff2-569f-4086-abw2-61dcba738a0d",
+    "Client_name": "Abbos",
+    "Branch_id": "80a19f3d-f348-4a93-91c3-6f8a4afd1505",
+    "Shop_asissent_id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Cashier_id": "0",
+    "Price": 23423.4,
+    "Payment_Type": "card",
+    "Status": "success",
+    "Created_at": "2023-08-11 18:25:11"
+  }, {
+    "Id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Client_name": "Bek",
+    "Branch_id": "819a6d0a-cf98-44a4-84b3-f8503e846ded",
+    "Shop_asissent_id": "",
+    "Cashier_id": "7fb8fe47-3948-447c-957e-f187736ec654",
+    "Price": 2050.1,
+    "Payment_Type": "card",
+    "Status": "success",
+    "Created_at": "2023-08-08 18:47:35"
+  }
+]

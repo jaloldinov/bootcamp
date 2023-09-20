@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "55f08fd1-18b8-4e8c-af0c-9cc716ba631d",
+    "Name": "fixed_type",
+    "Type": "fixed",
+    "AmountForCash": 10000,
+    "AmountForCard": 12000,
+    "CreatedAt": "2023-08-09 14:28:50"
+  },
+  {
+    "Id": "5ff4e53e-8a5b-48e1-b6ab-e0006a8a76b4",
+    "Name": "percent_type",
+    "Type": "percent",
+    "AmountForCash": 5,
+    "AmountForCard": 6,
+    "CreatedAt": "2023-08-09 14:29:24"
+  }
+]

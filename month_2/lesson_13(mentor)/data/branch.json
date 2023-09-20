@@ -1,0 +1,42 @@
+[
+  {
+    "Adress": "toshkent",
+    "CreatedAt": "2023-08-08 18:43:57",
+    "FoundedAt": "2002",
+    "Id": "819a6d0a-cf98-44a4-84b3-f8503e846ded",
+    "Name": "Uacademy",
+    "Year": 0
+  },
+  {
+    "Adress": "toshkent",
+    "CreatedAt": "2023-08-11 18:23:53",
+    "FoundedAt": "2002",
+    "Id": "80a19f3d-f348-4a93-91c3-6f8a4afd1505",
+    "Name": "Chilonzor",
+    "Year": 0
+  },
+  {
+    "Adress": "andijon",
+    "CreatedAt": "2023-08-11 18:24:09",
+    "FoundedAt": "2000",
+    "Id": "0104c39f-6ba6-4a49-8100-a90361154613",
+    "Name": "C1",
+    "Year": 0
+  },
+  {
+    "Adress": "andijon",
+    "CreatedAt": "2023-09-08 19:45:49",
+    "FoundedAt": "2020",
+    "Id": "f8fbe807-d465-4b21-af8f-6101a984f30e",
+    "Name": "Andijon Company",
+    "Year": 0
+  },
+  {
+    "Adress": "ANDIJON",
+    "CreatedAt": "2023-09-09 22:59:24",
+    "FoundedAt": "2511",
+    "Id": "ace7fe63-aef8-4e28-b783-609b87490bcd",
+    "Name": "MARHAMAT",
+    "Year": 0
+  }
+]

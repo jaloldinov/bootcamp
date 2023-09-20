@@ -1,0 +1,62 @@
+[
+  {
+    "Id": "bc566634-45a5-40d9-abe1-9603d086194f",
+    "Type": "topup",
+    "Amount": 12323,
+    "Source_type": "sales",
+    "Text": "comment",
+    "Sale_id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Staff_id": "7fb8fe47-3948-447c-957e-f187736ec654",
+    "Created_at": "2023-08-11 18:19:55"
+  },
+  {
+    "Id": "bc566634-45a5-40d9-abe1-9603d086194f",
+    "Type": "topup",
+    "Amount": 50000,
+    "Source_type": "sales",
+    "Text": "comment",
+    "Sale_id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Staff_id": "7fb8fe47-3948-447c-957e-f187736ec654",
+    "Created_at": "2023-08-09 18:19:55"
+  },
+  {
+    "Id": "bc566634-45a5-40d9-abe1-9603d086194f",
+    "Type": "withdraw",
+    "Amount": 55303,
+    "Source_type": "bonus",
+    "Text": "comment",
+    "Sale_id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Staff_id": "7fb8fe47-3948-447c-957e-f187736ec654",
+    "Created_at": "2023-08-10 18:19:55"
+  },
+  {
+    "Id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Type": "topup",
+    "Amount": 33330,
+    "Source_type": "bonus",
+    "Text": "comment",
+    "Sale_id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Staff_id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Created_at": "2023-08-11 18:19:55"
+  },
+  {
+    "Id": "dd9d614a-db9d-48b3-abe7-c4e961f63026",
+    "Type": "topup",
+    "Amount": 23230,
+    "Source_type": "bonus",
+    "Text": "nimadir",
+    "Sale_id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Staff_id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Created_at": "2023-08-11 18:23:35"
+  },
+  {
+    "Id": "dd9d614a-db9d-48b3-abe7-c4e961f63026",
+    "Type": "topup",
+    "Amount": 50000,
+    "Source_type": "bonus",
+    "Text": "nimadir",
+    "Sale_id": "5bd28370-f503-4a54-ade5-efe1eff3cbaa",
+    "Staff_id": "b391718a-2307-44bb-b028-506028e167dc",
+    "Created_at": "2023-08-09 18:23:35"
+  }
+]

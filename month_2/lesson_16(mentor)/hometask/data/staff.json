@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "7fb8fe47-3948-447c-957e-f187736ec654",
+    "BranchId": "819a6d0a-cf98-44a4-84b3-f8503e846ded",
+    "TariffId": "55f08fd1-18b8-4e8c-af0c-9cc716ba631d",
+    "TypeId": "cashier",
+    "Name": "Omadbek",
+    "Balance": 145040.1
+  },
+  {
+    "Id": "b391718a-2307-44bb-b028-506028e167dc",
+    "BranchId": "80a19f3d-f348-4a93-91c3-6f8a4afd1505",
+    "TariffId": "5ff4e53e-8a5b-48e1-b6ab-e0006a8a76b4",
+    "TypeId": "shop_assistant",
+    "Name": "Sarvarbek",
+    "Balance": 248400.2
+  }
+]

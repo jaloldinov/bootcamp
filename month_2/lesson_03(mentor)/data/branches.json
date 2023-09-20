@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Udevs",
+      "adress": "Bunyodkor ko'chasi 100, 4 uy"
+    },
+    {
+      "id": 2,
+      "name": "Andijon",
+      "adress": "Amir Temur ko'chasi  74 uy"
+    },
+    {
+      "id": 3,
+      "name": "Farg'ona",
+      "adress": "Buyuk Ipak yo'li ko'chasi"
+    },
+    {
+      "id": 4,
+      "name": "Toshkent",
+      "adress": "Shahriobod ko'chasi"
+    }
+  ]
+  

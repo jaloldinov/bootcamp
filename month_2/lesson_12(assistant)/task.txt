@@ -1,0 +1,29 @@
+Exercise 1: Create a program that uses goroutines and channels to print numbers from 1 to 10 concurrently.
+
+Exercise 2: Create a program that uses goroutines and channels to calculate the sum of numbers from 1 to 100 concurrently.
+
+Exercise 3: Create a program that uses goroutines and channels to find the factorial of a given number concurrently.
+
+Exercise 4: Create a program that uses goroutines and channels to check if a given number is prime concurrently.
+
+Exercise 5: Create a program that uses goroutines and channels to find the largest number in a given slice concurrently.
+
+Exercise 6: Create a program that uses goroutines and channels to reverse a string concurrently.
+
+Exercise 7: Create a program that uses goroutines and channels to multiply each element in a given slice by 2 concurrently.
+
+Exercise 8: Create a program that uses goroutines and channels to find the average of numbers in a given slice concurrently.
+
+Exercise 9: Create a program that uses goroutines and channels to sort a given slice of integers concurrently.
+
+Exercise 10: Create a program that uses goroutines and channels to find the sum of squares of numbers from 1 to 10 concurrently.
+
+Exercise 11: Create a program that uses goroutines and channels to calculate the Fibonacci sequence up to a given number concurrently.
+
+Exercise 12: Create a program that uses goroutines and channels to find the sum of even numbers in a given slice concurrently.
+
+Exercise 13: Create a program that uses goroutines and channels to find the length of the longest word in a given string concurrently.
+
+Exercise 14: Create a program that uses goroutines and channels to perform concurrent file processing. Each goroutine should process a separate file and return the count of lines in that file.
+
+Exercise 15: Create a program that uses goroutines and channels to implement a simple producer-consumer pattern. The producer goroutine should generate numbers and send them to the consumer goroutine through a channel, which will print the received numbers.
