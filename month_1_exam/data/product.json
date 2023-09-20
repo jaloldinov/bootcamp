@@ -1,0 +1,230 @@
+[
+    {
+        "id": "ffa888f7-e0cb-44e9-9cae-8c4ca2a115b9",
+        "name": "Pijama",
+        "price": 38000,
+        "category_id": "c114c821-2427-4279-8713-eacae9175bbc"
+    },
+    {
+        "id": "0a38e50d-0749-4bef-b6bc-ec9f3206f09a",
+        "name": "Sviter",
+        "price": 75000,
+        "category_id": "c114c821-2427-4279-8713-eacae9175bbc"
+    },
+    {
+        "id": "a0b57667-fe96-4438-a425-c213aa253689",
+        "name": "Tolstovka",
+        "price": 69000,
+        "category_id": "c114c821-2427-4279-8713-eacae9175bbc"
+    },
+    {
+        "id": "1b216751-256d-4441-bd17-8fa52d24a4c9",
+        "name": "Oq futbolka",
+        "price": 67000,
+        "category_id": "e25cf790-e07b-48cd-955b-e788d11e7dee"
+    },
+    {
+        "id": "210c776d-1911-44a9-8771-2e9237476bec",
+        "name": "Qora futbolka",
+        "price": 98000,
+        "category_id": "e25cf790-e07b-48cd-955b-e788d11e7dee"
+    },
+    {
+        "id": "a7ddbf9d-10b7-4429-93f8-712bd4074ca3",
+        "name": "Keta",
+        "price": 81000,
+        "category_id": "87adfef3-daaf-4291-bc2c-456e06dbc49f"
+    },
+    {
+        "id": "514faab1-009e-4352-868e-ef5041fc2adf",
+        "name": "Nike",
+        "price": 47000,
+        "category_id": "87adfef3-daaf-4291-bc2c-456e06dbc49f"
+    },
+    {
+        "id": "2258b75f-d706-48f9-8fbf-c8a8b1028d14",
+        "name": "Adidas",
+        "price": 31000,
+        "category_id": "117bc391-ce09-4976-b5e9-7fdde869895b"
+    },
+    {
+        "id": "7df81816-0b37-4922-bd87-d5dbe0f47c56",
+        "name": "MI 6",
+        "price": 24000,
+        "category_id": "f844ad82-99f3-4bfe-9d12-dbd61e28df3e"
+    },
+    {
+        "id": "9ca18640-35f9-46ae-8c02-e8ead811f0db",
+        "name": "Samsung S7",
+        "price": 38000,
+        "category_id": "f844ad82-99f3-4bfe-9d12-dbd61e28df3e"
+    },
+    {
+        "id": "94419d26-779c-45ed-9b2b-416cf3a44d28",
+        "name": "Iphone 13",
+        "price": 12000,
+        "category_id": "f844ad82-99f3-4bfe-9d12-dbd61e28df3e"
+    },
+    {
+        "id": "437b9718-cf48-4583-a153-c359a5352d10",
+        "name": "Nokia",
+        "price": 91000,
+        "category_id": "f844ad82-99f3-4bfe-9d12-dbd61e28df3e"
+    },
+    {
+        "id": "8704ac0c-89f8-44d0-8b4d-94d481463470",
+        "name": "Asus",
+        "price": 64000,
+        "category_id": "f4b72191-efb2-4b1a-ad78-5550aff87c34"
+    },
+    {
+        "id": "c9353095-9da2-46b5-bae3-9c83437ffb50",
+        "name": "HP",
+        "price": 94000,
+        "category_id": "f4b72191-efb2-4b1a-ad78-5550aff87c34"
+    },
+    {
+        "id": "0c6da75a-3c5d-4b0f-af59-9ed72117f847",
+        "name": "DELL",
+        "price": 13000,
+        "category_id": "f4b72191-efb2-4b1a-ad78-5550aff87c34"
+    },
+    {
+        "id": "a80cc924-fec3-4717-8289-f23604de45ae",
+        "name": "ACER",
+        "price": 99000,
+        "category_id": "f4b72191-efb2-4b1a-ad78-5550aff87c34"
+    },
+    {
+        "id": "15e48e8a-7b72-4c37-b613-5c0332e761a1",
+        "name": "Otkan Kunlar",
+        "price": 15000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "fcade91a-f4ef-48fc-808d-ed494cb8ba08",
+        "name": "Bolalik",
+        "price": 48000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "120c0bd8-09db-4433-aa50-c217d2473edb",
+        "name": "Vaqt",
+        "price": 99000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "ac307233-33b8-425a-9d4d-fb2ddc6b4c21",
+        "name": "Oq kema",
+        "price": 44000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "a8d7239f-8348-4ffd-a53b-f6fea535ad56",
+        "name": "Xazina",
+        "price": 64000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "6a7af66d-bc90-44c1-885a-dbce567af9d6",
+        "name": "Oltin olma",
+        "price": 62000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "61dbb9aa-5dff-4f1f-997b-e5e4f5a962d3",
+        "name": "Hasis ota",
+        "price": 23000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "ace982a1-d556-40b1-9089-45c7157624eb",
+        "name": "Qorquv",
+        "price": 19000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "506e9cd5-3087-425b-a2cb-6b400754c33a",
+        "name": "Ravshan",
+        "price": 59000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "5644c98f-f642-4d04-8068-64b4fc3c6297",
+        "name": "Alpomish",
+        "price": 80000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "8c8ae207-1df0-4db4-afbb-9c0c9f2fa7f2",
+        "name": "Jayra",
+        "price": 83000,
+        "category_id": "249f2a23-8d38-44aa-91c9-80bd48caff70"
+    },
+    {
+        "id": "c6701ad2-5074-4ba0-bf50-c80b1f94a1f6",
+        "name": "Suiqasd",
+        "price": 21000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "3aa12ba2-9d23-4276-9d4f-e942df0ec492",
+        "name": "Sherlok Xolms",
+        "price": 40000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "0c618044-cd74-4f42-ab82-ca11c281e1bc",
+        "name": "Garri Poter",
+        "price": 92000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "d9cb7d04-754b-4618-b5a1-9766cc9ebbde",
+        "name": "Inferno",
+        "price": 54000,
+        "category_id": "63f835a6-3b44-419b-94ea-c5f8d406c796"
+    },
+    {
+        "id": "92e6152e-87d6-4caf-a778-acee9e407154",
+        "name": "Davinchi Siri",
+        "price": 22000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "e7ad18b2-3fbf-4193-b8f3-e56a0581b121",
+        "name": "Raqamli Qala",
+        "price": 40000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "9eb95c08-b913-49d5-9024-a58396a1edff",
+        "name": "Qaroqchi",
+        "price": 82000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "c1f830d9-2f0c-47ac-805c-7c15a8ead14e",
+        "name": "Odamlar",
+        "price": 85000,
+        "category_id": "bfca8c38-e85a-42c5-89af-8777c448e711"
+    },
+    {
+        "id": "6831fbe1-30d1-41e2-9f2a-e239db88373e",
+        "name": "Ona dardi",
+        "price": 94000,
+        "category_id": "81db9fcd-500e-45d7-b0f1-b6d50ce67bca"
+    },
+    {
+        "id": "ab24c8e8-878a-4b20-ba09-f68de00bbe3d",
+        "name": "Simo",
+        "price": 88000,
+        "category_id": "81db9fcd-500e-45d7-b0f1-b6d50ce67bca"
+    },
+    {
+        "id": "f66d03b1-be15-4def-8cf7-28cd9fb72c68",
+        "name": "Olam guliston",
+        "price": 40000,
+        "category_id": "81db9fcd-500e-45d7-b0f1-b6d50ce67bca"
+    }
+]

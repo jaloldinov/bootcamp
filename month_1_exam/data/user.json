@@ -1,0 +1,80 @@
+[
+	{
+		"id": "27457ac2-74dd-4656-b9b0-0d46b1af10dc",
+		"name": "Otis",
+		"surname": "Lesch",
+		"balance": 55340000
+	},
+	{
+		"id": "ebea6d88-820e-4863-8f69-e91f891b92b0",
+		"name": "Annie",
+		"surname": "Vandervort",
+		"balance": 17000000
+	},
+	{
+		"id": "ddc46ae9-6ccc-450a-ad74-50276f3c09f1",
+		"name": "Grady",
+		"surname": "Wehner",
+		"balance": 24000000
+	},
+	{
+		"id": "c463393b-4690-4dfe-b5e0-7f4a7fa1b21e",
+		"name": "Priscilla",
+		"surname": "Langworth",
+		"balance": 955000
+	},
+	{
+		"id": "e6ded598-675b-4de2-a1e9-00a876b8e719",
+		"name": "David",
+		"surname": "Barrows",
+		"balance": 75000000
+	},
+	{
+		"id": "52ecdc0b-053f-4c2c-8b19-a06023fce9d2",
+		"name": "Misty",
+		"surname": "Hand",
+		"balance": 43000000
+	},
+	{
+		"id": "5ac1bb12-4f7b-46f7-96d8-de1ffef1306c",
+		"name": "Jake",
+		"surname": "Nolan",
+		"balance": 78000000
+	},
+	{
+		"id": "0c7e40db-9948-4349-aade-a8378862de9c",
+		"name": "Gilbert",
+		"surname": "Friesen",
+		"balance": 36000000
+	},
+	{
+		"id": "48097741-22c9-4663-8796-3c9993d88ffe",
+		"name": "Clark",
+		"surname": "Mills",
+		"balance": 86000000
+	},
+	{
+		"id": "807f6f90-5fc0-4887-9c3d-413fd7361c56",
+		"name": "Jake",
+		"surname": "Oberbrunner",
+		"balance": 595285000
+	},
+	{
+		"id": "0b4af7a2-12de-4970-92ca-e2289d86eb63",
+		"name": "Claude",
+		"surname": "Leffler",
+		"balance": 97000000
+	},
+	{
+		"id": "3ab432a4-2e4d-4525-b737-5e22ad6800eb",
+		"name": "Charlene",
+		"surname": "Huels",
+		"balance": 72000000
+	},
+	{
+		"id": "080b6453-d424-4362-b1e0-18b80caa6fce",
+		"name": "Omadbek",
+		"surname": "Crona",
+		"balance": 33000000
+	}
+]

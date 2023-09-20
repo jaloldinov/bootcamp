@@ -1,0 +1,57 @@
+[
+    {
+        "id": "2997b6c1-ea68-4237-9033-e17fba9af821",
+        "name": "Kiyim",
+        "parent_id": ""
+    },
+    {
+        "id": "c114c821-2427-4279-8713-eacae9175bbc",
+        "name": "Bolalar kiyimi",
+        "parent_id": "2997b6c1-ea68-4237-9033-e17fba9af821"
+    },
+    {
+        "id": "e25cf790-e07b-48cd-955b-e788d11e7dee",
+        "name": "Futbolkalar",
+        "parent_id": "2997b6c1-ea68-4237-9033-e17fba9af821"
+    },
+    {
+        "id": "87adfef3-daaf-4291-bc2c-456e06dbc49f",
+        "name": "Krossovkalar",
+        "parent_id": "2997b6c1-ea68-4237-9033-e17fba9af821"
+    },
+    {
+        "id": "117bc391-ce09-4976-b5e9-7fdde869895b",
+        "name": "Elektronika",
+        "parent_id": ""
+    },
+    {
+        "id": "f844ad82-99f3-4bfe-9d12-dbd61e28df3e",
+        "name": "Telefonlar",
+        "parent_id": "117bc391-ce09-4976-b5e9-7fdde869895b"
+    },
+    {
+        "id": "f4b72191-efb2-4b1a-ad78-5550aff87c34",
+        "name": "Kompyuter",
+        "parent_id": "117bc391-ce09-4976-b5e9-7fdde869895b"
+    },
+    {
+        "id": "63f835a6-3b44-419b-94ea-c5f8d406c796",
+        "name": "Kitoblar",
+        "parent_id": ""
+    },
+    {
+        "id": "249f2a23-8d38-44aa-91c9-80bd48caff70",
+        "name": "Badiiy adabiyot",
+        "parent_id": "63f835a6-3b44-419b-94ea-c5f8d406c796"
+    },
+    {
+        "id": "bfca8c38-e85a-42c5-89af-8777c448e711",
+        "name": "Detektiv",
+        "parent_id": "63f835a6-3b44-419b-94ea-c5f8d406c796"
+    },
+    {
+        "id": "81db9fcd-500e-45d7-b0f1-b6d50ce67bca",
+        "name": "Romanlar",
+        "parent_id": "63f835a6-3b44-419b-94ea-c5f8d406c796"
+    }
+]
