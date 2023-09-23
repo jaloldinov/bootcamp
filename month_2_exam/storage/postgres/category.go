@@ -22,28 +22,46 @@ func NewCategoryRepo(db *pgxpool.Pool) *categoryRepo {
 }
 
 func (r *categoryRepo) Create(req *models.CreateCategory) (string, error) {
-
 	var (
-		id    = uuid.NewString()
-		query string
+		id = uuid.NewString()
 	)
 
-	query = `
-		INSERT INTO "category"(
-			"id", 
-			"name",
-			"parent_id",
-			"created_at")
-		VALUES ($1, $2, $3, NOW())`
+	query := `
+				INSERT INTO "category"(
+					"id",
+					"name",
+					"created_at")
+				VALUES ($1, $2, NOW())`
 
-	_, err := r.db.Exec(context.Background(), query,
-		id,
-		req.Name,
-		req.ParentId,
-	)
+	if req.ParentId != "" {
+		query = `
+				INSERT INTO "category"(
+					"id",
+					"name",
+					"parent_id",
+					"created_at")
+				VALUES ($1, $2, $3, NOW())`
+	}
 
-	if err != nil {
-		return "", err
+	if req.ParentId != "" {
+		_, err := r.db.Exec(context.Background(), query,
+			id,
+			req.Name,
+			req.ParentId,
+		)
+
+		if err != nil {
+			return "", err
+		}
+	} else {
+		_, err := r.db.Exec(context.Background(), query,
+			id,
+			req.Name,
+		)
+
+		if err != nil {
+			return "", err
+		}
 	}
 
 	return id, nil
@@ -155,9 +173,7 @@ func (r *categoryRepo) GetList(req *models.CategoryGetListRequest) (*models.Cate
 	}
 	return resp, nil
 }
-
 func (r *categoryRepo) Update(req *models.UpdateCategory) (string, error) {
-
 	var (
 		query  string
 		params map[string]interface{}
@@ -168,16 +184,24 @@ func (r *categoryRepo) Update(req *models.UpdateCategory) (string, error) {
 			"category"
 		SET
 			"name" = :name,
-			"parent_id" = :parent_id,
 			"updated_at" = NOW()
-		WHERE id = :id
 	`
 
 	params = map[string]interface{}{
-		"id":        req.Id,
-		"name":      req.Name,
-		"parent_id": req.ParentId,
+		"id":   req.Id,
+		"name": req.Name,
 	}
+
+	if req.ParentId != "" {
+		query += `,
+			"parent_id" = :parent_id
+		`
+		params["parent_id"] = req.ParentId
+	}
+
+	query += `
+		WHERE id = :id
+	`
 
 	query, args := helper.ReplaceQueryParams(query, params)
 
