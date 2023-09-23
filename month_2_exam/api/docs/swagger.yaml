@@ -23,6 +23,28 @@ definitions:
       count:
         type: integer
     type: object
+  models.Category:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      parent_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.CategoryGetListResponse:
+    properties:
+      categories:
+        items:
+          $ref: '#/definitions/models.Category'
+        type: array
+      count:
+        type: integer
+    type: object
   models.CreateBranch:
     properties:
       address:
@@ -30,6 +52,13 @@ definitions:
       name:
         type: string
       phone_number:
+        type: string
+    type: object
+  models.CreateCategory:
+    properties:
+      name:
+        type: string
+      parent_id:
         type: string
     type: object
   models.ErrorResp:
@@ -225,4 +254,187 @@ paths:
       summary: UPDATE BRANCH
       tags:
       - BRANCH
+  /category:
+    get:
+      consumes:
+      - application/json
+      description: gets all category based on limit, page and search by name
+      parameters:
+      - default: 10
+        description: limit
+        in: query
+        minimum: 1
+        name: limit
+        type: integer
+      - default: 1
+        description: page
+        in: query
+        minimum: 1
+        name: page
+        type: integer
+      - description: search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CategoryGetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: LIST CATEGORY
+      tags:
+      - CATEGORY
+    post:
+      consumes:
+      - application/json
+      description: adds category data to db based on given info in body
+      parameters:
+      - description: category data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: CREATE CATEGORY
+      tags:
+      - CATEGORY
+  /category/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: deletes category by id
+      parameters:
+      - description: id of category
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: DELETE CATEGORY BY ID
+      tags:
+      - CATEGORY
+    get:
+      consumes:
+      - application/json
+      description: gets category by ID
+      parameters:
+      - description: Category ID
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Category'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: GET BY ID
+      tags:
+      - CATEGORY
+    put:
+      consumes:
+      - application/json
+      description: UPDATES CATEGORY BASED ON GIVEN DATA AND ID
+      parameters:
+      - description: id of category
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: category data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCategory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: UPDATE CATEGORY
+      tags:
+      - CATEGORY
 swagger: "2.0"

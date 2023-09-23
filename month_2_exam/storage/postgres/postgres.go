@@ -10,8 +10,9 @@ import (
 )
 
 type store struct {
-	db       *pgxpool.Pool
-	branches *branchRepo
+	db         *pgxpool.Pool
+	branches   *branchRepo
+	categories *categoryRepo
 }
 
 func NewStorage(ctx context.Context, cfg config.Config) (storage.StorageI, error) {
@@ -44,6 +45,13 @@ func (s *store) Branch() storage.BranchRepoI {
 		s.branches = NewBranchRepo(s.db)
 	}
 	return s.branches
+}
+
+func (s *store) Category() storage.CategoryRepoI {
+	if s.categories == nil {
+		s.categories = NewCategoryRepo(s.db)
+	}
+	return s.categories
 }
 
 func (s *store) Close() {
