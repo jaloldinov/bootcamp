@@ -48,7 +48,8 @@ func (h *Handler) CreateComingTable(ctx *gin.Context) {
 // @Produce      json
 // @Param  		 limit         query     int        false  "limit"          minimum(1)     default(10)
 // @Param  		 page          query     int        false  "page"           minimum(1)     default(1)
-// @Param   	 search        query     string     false  "search"
+// @Param   	 coming_id        query     string     false  "coming_id"
+// @Param   	 branch_id        query     string     false  "branch_id"
 // @Success      200  {object}  models.ComingTableGetListResponse
 // @Failure      400  {object}  models.ErrorResp
 // @Failure      404  {object}  models.ErrorResp
@@ -68,9 +69,10 @@ func (h *Handler) GetListComingTable(ctx *gin.Context) {
 	}
 
 	resp, err := h.strg.ComingTable().GetList(&models.ComingTableGetListRequest{
-		Page:   page,
-		Limit:  limit,
-		Search: ctx.Query("search"),
+		Page:     page,
+		Limit:    limit,
+		ComingId: ctx.Query("coming_id"),
+		BranchId: ctx.Query("branch_id"),
 	})
 	if err != nil {
 		h.log.Error("error ComingTable GetListComingTable:", logger.Error(err))
@@ -141,7 +143,7 @@ func (h *Handler) UpdateComingTable(ctx *gin.Context) {
 }
 
 // UpdateComingTableStatus godoc
-// @Router       /coming_table_status/{id} [PUT]
+// @Router       /doincome/{id} [PUT]
 // @Summary      UPDATES STATUS "in_process" to "finished"
 // @Description  UPDATES COMING TABLE BASED ON GIVEN DATA AND ID
 // @Tags         COMING TABLE

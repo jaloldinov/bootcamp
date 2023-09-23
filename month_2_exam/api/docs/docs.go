@@ -593,8 +593,14 @@ const docTemplate = `{
                     },
                     {
                         "type": "string",
-                        "description": "search",
-                        "name": "search",
+                        "description": "coming_id",
+                        "name": "coming_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "branch_id",
+                        "name": "branch_id",
                         "in": "query"
                     }
                 ],
@@ -834,7 +840,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/coming_table_status/{id}": {
+        "/doincome/{id}": {
             "put": {
                 "description": "UPDATES COMING TABLE BASED ON GIVEN DATA AND ID",
                 "produces": [

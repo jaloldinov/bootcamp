@@ -525,9 +525,13 @@ paths:
         minimum: 1
         name: page
         type: integer
-      - description: search
+      - description: coming_id
         in: query
-        name: search
+        name: coming_id
+        type: string
+      - description: branch_id
+        in: query
+        name: branch_id
         type: string
       produces:
       - application/json
@@ -690,7 +694,7 @@ paths:
       summary: UPDATE COMING TABLE
       tags:
       - COMING TABLE
-  /coming_table_status/{id}:
+  /doincome/{id}:
     put:
       description: UPDATES COMING TABLE BASED ON GIVEN DATA AND ID
       parameters:

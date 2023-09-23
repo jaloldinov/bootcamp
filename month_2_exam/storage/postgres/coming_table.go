@@ -118,9 +118,14 @@ func (r *comingTableRepo) GetList(req *models.ComingTableGetListRequest) (*model
 				"updated_at" 
 			FROM "coming_table"
 		`
-	if req.Search != "" {
-		filter += ` AND ("coming_id" = :search) `
-		params["search"] = req.Search
+	if req.ComingId != "" {
+		filter += ` AND ("coming_id" = :coming_id)`
+		params["coming_id"] = req.ComingId
+	}
+
+	if req.BranchId != "" {
+		filter += ` AND ("branch_id" = :branch_id)`
+		params["branch_id"] = req.BranchId
 	}
 
 	offset := (req.Page - 1) * req.Limit

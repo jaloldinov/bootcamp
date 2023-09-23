@@ -31,9 +31,10 @@ type UpdateComingTable struct {
 }
 
 type ComingTableGetListRequest struct {
-	Page   int    `json:"page"`
-	Limit  int    `json:"limit"`
-	Search string `json:"search"`
+	Page     int    `json:"page"`
+	Limit    int    `json:"limit"`
+	BranchId string `json:"branch_id"`
+	ComingId string `json:"coming_id"`
 }
 
 type ComingTableGetListResponse struct {
