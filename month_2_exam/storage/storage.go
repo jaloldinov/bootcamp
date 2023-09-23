@@ -7,6 +7,7 @@ type StorageI interface {
 	Branch() BranchRepoI
 	Category() CategoryRepoI
 	Product() ProductRepoI
+	ComingTable() ComingTableRepoI
 }
 
 type BranchRepoI interface {
@@ -31,4 +32,13 @@ type ProductRepoI interface {
 	GetList(*models.ProductGetListRequest) (*models.ProductGetListResponse, error)
 	Update(*models.UpdateProduct) (string, error)
 	Delete(*models.ProductPrimaryKey) error
+}
+
+type ComingTableRepoI interface {
+	Create(*models.CreateComingTable) (string, error)
+	GetByID(*models.ComingTableComingIdKey) (*models.ComingTable, error)
+	GetList(*models.ComingTableGetListRequest) (*models.ComingTableGetListResponse, error)
+	Update(*models.UpdateComingTable) (string, error)
+	UpdateStatus(*models.ComingTablePrimaryKey) (string, error)
+	Delete(*models.ComingTablePrimaryKey) error
 }

@@ -121,7 +121,7 @@ func (r *productRepo) GetList(req *models.ProductGetListRequest) (*models.Produc
 		FROM "product"
 	`
 	if req.Search != "" {
-		filter += ` AND ("name" ILIKE '%' || :search || '%' OR "barcode" = :search) `
+		filter += ` AND ("barcode" = :search) `
 		params["search"] = req.Search
 	}
 

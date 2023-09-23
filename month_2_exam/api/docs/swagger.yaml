@@ -45,6 +45,32 @@ definitions:
       count:
         type: integer
     type: object
+  models.ComingTable:
+    properties:
+      branch_id:
+        type: string
+      coming_id:
+        type: string
+      created_at:
+        type: string
+      date_time:
+        type: string
+      id:
+        type: string
+      status:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.ComingTableGetListResponse:
+    properties:
+      count:
+        type: integer
+      products:
+        items:
+          $ref: '#/definitions/models.ComingTable'
+        type: array
+    type: object
   models.CreateBranch:
     properties:
       address:
@@ -59,6 +85,13 @@ definitions:
       name:
         type: string
       parent_id:
+        type: string
+    type: object
+  models.CreateComingTable:
+    properties:
+      branch_id:
+        type: string
+      coming_id:
         type: string
     type: object
   models.CreateProduct:
@@ -474,6 +507,221 @@ paths:
       summary: UPDATE CATEGORY
       tags:
       - CATEGORY
+  /coming_table:
+    get:
+      consumes:
+      - application/json
+      description: gets all coming_table based on limit, page and search by name
+      parameters:
+      - default: 10
+        description: limit
+        in: query
+        minimum: 1
+        name: limit
+        type: integer
+      - default: 1
+        description: page
+        in: query
+        minimum: 1
+        name: page
+        type: integer
+      - description: search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ComingTableGetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: LIST COMING TABLES
+      tags:
+      - COMING TABLE
+    post:
+      consumes:
+      - application/json
+      description: adds coming_table data to db based on given info in body
+      parameters:
+      - description: coming_table data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateComingTable'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: CREATE COMING TABLE
+      tags:
+      - COMING TABLE
+  /coming_table/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: deletes coming_table by id
+      parameters:
+      - description: id of coming_table
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: DELETE COMING TABLE BY ID
+      tags:
+      - COMING TABLE
+    get:
+      consumes:
+      - application/json
+      description: gets coming_table by ID
+      parameters:
+      - description: ComingTable ID
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ComingTable'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: GET BY ID
+      tags:
+      - COMING TABLE
+    put:
+      consumes:
+      - application/json
+      description: UPDATES COMING TABLE BASED ON GIVEN DATA AND ID
+      parameters:
+      - description: id of coming_table
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: coming_table data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateComingTable'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: UPDATE COMING TABLE
+      tags:
+      - COMING TABLE
+  /coming_table_status/{id}:
+    put:
+      description: UPDATES COMING TABLE BASED ON GIVEN DATA AND ID
+      parameters:
+      - description: id of coming_table
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: UPDATES STATUS "in_process" to "finished"
+      tags:
+      - COMING TABLE
   /product:
     get:
       consumes:
