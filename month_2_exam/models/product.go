@@ -8,7 +8,7 @@ type CreateProduct struct {
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`
 	Barcode    int     `json:"barcode"`
-	CateogryId string  `json:"cateogry_id"`
+	CategoryId string  `json:"category_id"`
 }
 
 type Product struct {
@@ -16,7 +16,7 @@ type Product struct {
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`
 	Barcode    int     `json:"barcode"`
-	CateogryId string  `json:"cateogry_id"`
+	CategoryId string  `json:"category_id"`
 	CreatedAt  string  `json:"created_at"`
 	UpdatedAt  string  `json:"updated_at"`
 }
@@ -26,7 +26,7 @@ type UpdateProduct struct {
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`
 	Barcode    int     `json:"barcode"`
-	CateogryId string  `json:"cateogry_id"`
+	CategoryId string  `json:"category_id"`
 }
 
 type ProductGetListRequest struct {
