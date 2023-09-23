@@ -7,7 +7,7 @@ type ProductPrimaryKey struct {
 type CreateProduct struct {
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`
-	Barcode    int     `json:"barcode"`
+	Barcode    string  `json:"barcode"`
 	CategoryId string  `json:"category_id"`
 }
 
@@ -15,7 +15,7 @@ type Product struct {
 	Id         string  `json:"id"`
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`
-	Barcode    int     `json:"barcode"`
+	Barcode    string  `json:"barcode"`
 	CategoryId string  `json:"category_id"`
 	CreatedAt  string  `json:"created_at"`
 	UpdatedAt  string  `json:"updated_at"`
@@ -25,7 +25,7 @@ type UpdateProduct struct {
 	Id         string  `json:"id"`
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`
-	Barcode    int     `json:"barcode"`
+	Barcode    string  `json:"barcode"`
 	CategoryId string  `json:"category_id"`
 }
 

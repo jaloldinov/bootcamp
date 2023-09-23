@@ -6,6 +6,7 @@ type StorageI interface {
 	Close()
 	Branch() BranchRepoI
 	Category() CategoryRepoI
+	Product() ProductRepoI
 }
 
 type BranchRepoI interface {
@@ -22,4 +23,12 @@ type CategoryRepoI interface {
 	GetList(*models.CategoryGetListRequest) (*models.CategoryGetListResponse, error)
 	Update(*models.UpdateCategory) (string, error)
 	Delete(*models.CategoryPrimaryKey) error
+}
+
+type ProductRepoI interface {
+	Create(*models.CreateProduct) (string, error)
+	GetByID(*models.ProductPrimaryKey) (*models.Product, error)
+	GetList(*models.ProductGetListRequest) (*models.ProductGetListResponse, error)
+	Update(*models.UpdateProduct) (string, error)
+	Delete(*models.ProductPrimaryKey) error
 }

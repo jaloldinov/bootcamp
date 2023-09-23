@@ -13,6 +13,7 @@ type store struct {
 	db         *pgxpool.Pool
 	branches   *branchRepo
 	categories *categoryRepo
+	products   *productRepo
 }
 
 func NewStorage(ctx context.Context, cfg config.Config) (storage.StorageI, error) {
@@ -52,6 +53,13 @@ func (s *store) Category() storage.CategoryRepoI {
 		s.categories = NewCategoryRepo(s.db)
 	}
 	return s.categories
+}
+
+func (s *store) Product() storage.ProductRepoI {
+	if s.products == nil {
+		s.products = NewProductRepo(s.db)
+	}
+	return s.products
 }
 
 func (s *store) Close() {
