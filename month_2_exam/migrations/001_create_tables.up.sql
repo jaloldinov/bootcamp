@@ -25,12 +25,14 @@ CREATE TABLE "product" (
   "updated_at" timestamp
 );
 
+CREATE TYPE coming_status AS ENUM ('in_process', 'finished');
+
 CREATE TABLE "coming_table" (
   "id" uuid PRIMARY KEY,
   "coming_id" varchar NOT NULL,
   "branch_id" uuid,
   "date_time" timestamp,
-  "status" varchar DEFAULT 'in_process',
+  "status" coming_status DEFAULT 'in_process',
   "created_at" timestamp DEFAULT (current_timestamp),
   "updated_at" timestamp
 );
