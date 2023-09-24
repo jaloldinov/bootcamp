@@ -194,6 +194,53 @@ definitions:
           $ref: '#/definitions/models.Product'
         type: array
     type: object
+  models.Remaining:
+    properties:
+      barcode:
+        type: string
+      branch_id:
+        type: string
+      category_id:
+        type: string
+      count:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      total_price:
+        type: number
+      updated_at:
+        type: string
+    type: object
+  models.RemainingGetListResponse:
+    properties:
+      count:
+        type: integer
+      remainings:
+        items:
+          $ref: '#/definitions/models.Remaining'
+        type: array
+    type: object
+  models.UpdateRemainingSoft:
+    properties:
+      barcode:
+        type: string
+      branch_id:
+        type: string
+      category_id:
+        type: string
+      count:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+    type: object
 info:
   contact: {}
 paths:
@@ -978,9 +1025,9 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/models.ErrorResp'
-      summary: CREATE REMAING
+      summary: CREATE REMAINING
       tags:
-      - REMAING
+      - REMAINING
   /product:
     get:
       consumes:
@@ -999,9 +1046,13 @@ paths:
         minimum: 1
         name: page
         type: integer
-      - description: search
+      - description: barcode
         in: query
-        name: search
+        name: barcode
+        type: string
+      - description: name
+        in: query
+        name: name
         type: string
       produces:
       - application/json
@@ -1164,4 +1215,162 @@ paths:
       summary: UPDATE PRODUCT
       tags:
       - PRODUCT
+  /remaining:
+    get:
+      consumes:
+      - application/json
+      description: gets all remaining based on limit, page and search by name
+      parameters:
+      - default: 10
+        description: limit
+        in: query
+        minimum: 1
+        name: limit
+        type: integer
+      - default: 1
+        description: page
+        in: query
+        minimum: 1
+        name: page
+        type: integer
+      - description: branch_id
+        in: query
+        name: branch_id
+        type: string
+      - description: category_id
+        in: query
+        name: category_id
+        type: string
+      - description: barcode
+        in: query
+        name: barcode
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemainingGetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: LIST REMAINING
+      tags:
+      - REMAINING
+  /remaining/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: deletes remaining by id
+      parameters:
+      - description: id of remaining
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: DELETE REMAINING BY ID
+      tags:
+      - REMAINING
+    get:
+      consumes:
+      - application/json
+      description: gets remaining by ID
+      parameters:
+      - description: Remaining ID
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Remaining'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: GET BY ID
+      tags:
+      - REMAINING
+    put:
+      consumes:
+      - application/json
+      description: UPDATES REMAINING BASED ON GIVEN DATA AND ID
+      parameters:
+      - description: id of remaining
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: remaining data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateRemainingSoft'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: UPDATE REMAINING
+      tags:
+      - REMAINING
 swagger: "2.0"

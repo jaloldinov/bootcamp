@@ -61,6 +61,7 @@ func (r *remainingRepo) Create(req *models.CreateRemaining) (string, error) {
 
 func (r *remainingRepo) GetByID(req *models.RemainingPrimaryKey) (*models.Remaining, error) {
 	var updatedAt sql.NullString
+	var createdAt sql.NullString
 
 	query := `
 		SELECT
@@ -87,8 +88,10 @@ func (r *remainingRepo) GetByID(req *models.RemainingPrimaryKey) (*models.Remain
 		&remaining.Barcode,
 		&remaining.Count,
 		&remaining.TotalPrice,
+		&createdAt,
 		&updatedAt,
 	)
+	remaining.CreatedAt = createdAt.String
 	remaining.UpdatedAt = updatedAt.String
 	if err != nil {
 		return nil, err
@@ -148,6 +151,8 @@ func (r *remainingRepo) GetList(req *models.RemainingGetListRequest) (*models.Re
 
 	for rows.Next() {
 		var updatedAt sql.NullString
+		var createdAt sql.NullString
+
 		var remaining models.Remaining
 		err := rows.Scan(
 			&resp.Count,
@@ -159,12 +164,15 @@ func (r *remainingRepo) GetList(req *models.RemainingGetListRequest) (*models.Re
 			&remaining.Barcode,
 			&remaining.Count,
 			&remaining.TotalPrice,
+			&createdAt,
 			&updatedAt,
 		)
 		if err != nil {
 			return nil, err
 		}
+		remaining.CreatedAt = createdAt.String
 		remaining.UpdatedAt = updatedAt.String
+
 		resp.Remainings = append(resp.Remainings, &remaining)
 	}
 	return resp, nil
@@ -180,9 +188,9 @@ func (r *remainingRepo) Update(req *models.UpdateRemaining) (string, error) {
 			"category_id" = $2,
 			"name" = $3,
 			"price" = $4,
-			"barcode" $5,
+			"barcode" =$5,
 			"count" = $6,
-			"total_price" $7,
+			"total_price" =$7,
 			"updated_at" = NOW()
 		WHERE id = $8
 	`

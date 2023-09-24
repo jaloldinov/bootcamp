@@ -48,7 +48,8 @@ func (h *Handler) CreateProduct(ctx *gin.Context) {
 // @Produce      json
 // @Param  		 limit         query     int        false  "limit"          minimum(1)     default(10)
 // @Param  		 page          query     int        false  "page"           minimum(1)     default(1)
-// @Param   	 search        query     string     false  "search"
+// @Param   	 barcode        query     string     false  "barcode"
+// @Param   	 name        query     string     false  "name"
 // @Success      200  {object}  models.ProductGetListResponse
 // @Failure      400  {object}  models.ErrorResp
 // @Failure      404  {object}  models.ErrorResp
@@ -68,9 +69,10 @@ func (h *Handler) GetListProduct(ctx *gin.Context) {
 	}
 
 	resp, err := h.strg.Product().GetList(&models.ProductGetListRequest{
-		Page:   page,
-		Limit:  limit,
-		Search: ctx.Query("search"),
+		Page:    page,
+		Limit:   limit,
+		Name:    ctx.Query("name"),
+		Barcode: ctx.Query("barcode"),
 	})
 	if err != nil {
 		h.log.Error("error Product GetListProduct:", logger.Error(err))

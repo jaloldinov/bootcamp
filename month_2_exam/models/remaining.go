@@ -41,6 +41,15 @@ type UpdateRemaining struct {
 	TotalPrice float64 `json:"total_price"`
 }
 
+type UpdateRemainingSoft struct {
+	BranchId   string  `json:"branch_id"`
+	CategoryId string  `json:"category_id"`
+	Name       string  `json:"name"`
+	Price      float64 `json:"price"`
+	Barcode    string  `json:"barcode"`
+	Count      int     `json:"count"`
+}
+
 type RemainingGetListRequest struct {
 	Page       int    `json:"page"`
 	Limit      int    `json:"limit"`

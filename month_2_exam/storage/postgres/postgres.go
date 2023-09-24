@@ -79,7 +79,7 @@ func (s *store) ComingTableProduct() storage.ComingTableProductRepoI {
 	return s.comingTableProduct
 }
 
-func (s *store) Remainin() storage.RemainingRepoI {
+func (s *store) Remaining() storage.RemainingRepoI {
 	if s.remainings == nil {
 		s.remainings = NewRemainingRepo(s.db)
 	}

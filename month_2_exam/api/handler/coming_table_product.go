@@ -132,7 +132,7 @@ func (h *Handler) GetListComingTableProduct(ctx *gin.Context) {
 	resp, err := h.strg.ComingTableProduct().GetList(&models.ComingTableProductGetListRequest{
 		Page:           page,
 		Limit:          limit,
-		CategoryId:     ctx.Query("search"),
+		CategoryId:     ctx.Query("category_id"),
 		ProductBarcode: ctx.Query("barcode"),
 	})
 	if err != nil {

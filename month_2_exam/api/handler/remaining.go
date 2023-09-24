@@ -4,15 +4,16 @@ import (
 	"market/models"
 	"market/pkg/logger"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
 
 // CreateRemaining godoc
 // @Router       /do_income/{coming_table_id} [POST]
-// @Summary      CREATE REMAING
+// @Summary      CREATE REMAINING
 // @Description adds remaining data to db based on given coming_table_id
-// @Tags         REMAING
+// @Tags         REMAINING
 // @Accept       json
 // @Produce      json
 // @Param        coming_table_id path string true "Coming Table ID"
@@ -54,11 +55,11 @@ func (h *Handler) CreateRemaining(ctx *gin.Context) {
 	// cheking remain table by branch and barcode, if yes, update otherwise create
 	req := models.CheckingRemaining{BranchId: branch_id, Barcode: remaining.Barcode}
 
-	id, err := h.strg.Remainin().CheckRemaing(&req)
+	id, err := h.strg.Remaining().CheckRemaing(&req)
 	if err != nil {
 		h.log.Info("not found then we are creating new remaining", logger.Error(err))
 		// if product or remaining is not exists, add remaining table
-		resp, err := h.strg.Remainin().Create(&remaining)
+		resp, err := h.strg.Remaining().Create(&remaining)
 		if err != nil {
 			h.log.Error("error remaining create:", logger.Error(err))
 			ctx.JSON(http.StatusBadRequest, err)
@@ -81,7 +82,7 @@ func (h *Handler) CreateRemaining(ctx *gin.Context) {
 		Count:      remaining.Count,
 		TotalPrice: remaining.TotalPrice,
 	}
-	r, err := h.strg.Remainin().UpdateExists(&updatingData)
+	r, err := h.strg.Remaining().UpdateExists(&updatingData)
 	if err != nil {
 		h.log.Info("error remaing update:", logger.Error(err))
 		ctx.JSON(http.StatusInternalServerError, err.Error())
@@ -93,16 +94,16 @@ func (h *Handler) CreateRemaining(ctx *gin.Context) {
 	h.strg.ComingTable().UpdateStatus(&comingTableId)
 }
 
-/*
 // ListRemainings godoc
 // @Router       /remaining [GET]
-// @Summary      LIST REMAING
+// @Summary      LIST REMAINING
 // @Description  gets all remaining based on limit, page and search by name
-// @Tags         REMAING
+// @Tags         REMAINING
 // @Accept       json
 // @Produce      json
 // @Param  		 limit         query     int        false  "limit"          minimum(1)     default(10)
 // @Param  		 page          query     int        false  "page"           minimum(1)     default(1)
+// @Param   	 branch_id          query     string     false  "branch_id"
 // @Param   	 category_id        query     string     false  "category_id"
 // @Param   	 barcode            query     string     false  "barcode"
 // @Success      200  {object}  models.RemainingGetListResponse
@@ -124,14 +125,15 @@ func (h *Handler) GetListRemaining(ctx *gin.Context) {
 	}
 
 	resp, err := h.strg.Remaining().GetList(&models.RemainingGetListRequest{
-		Page:           page,
-		Limit:          limit,
-		CategoryId:     ctx.Query("search"),
-		ProductBarcode: ctx.Query("barcode"),
+		Page:       page,
+		Limit:      limit,
+		CategoryId: ctx.Query("search"),
+		Barcode:    ctx.Query("barcode"),
+		BranchId:   ctx.Query("branch_id"),
 	})
 	if err != nil {
 		h.log.Error("error Remaining GetListRemaining:", logger.Error(err))
-		ctx.JSON(http.StatusInternalServerError, "internal server error")
+		ctx.JSON(http.StatusInternalServerError, err)
 		return
 	}
 
@@ -142,7 +144,7 @@ func (h *Handler) GetListRemaining(ctx *gin.Context) {
 // @Router       /remaining/{id} [GET]
 // @Summary      GET BY ID
 // @Description  gets remaining by ID
-// @Tags         REMAING
+// @Tags         REMAINING
 // @Accept       json
 // @Produce      json
 // @Param        id   path      string  true  "Remaining ID" format(uuid)
@@ -165,13 +167,13 @@ func (h *Handler) GetByIDRemaining(ctx *gin.Context) {
 
 // UpdateRemaining godoc
 // @Router       /remaining/{id} [PUT]
-// @Summary      UPDATE REMAING
-// @Description  UPDATES REMAING BASED ON GIVEN DATA AND ID
-// @Tags         REMAING
+// @Summary      UPDATE REMAINING
+// @Description  UPDATES REMAINING BASED ON GIVEN DATA AND ID
+// @Tags         REMAINING
 // @Accept       json
 // @Produce      json
 // @Param        id    path     string  true  "id of remaining" format(uuid)
-// @Param        data  body      models.CreateRemaining  true  "remaining data"
+// @Param        data  body      models.UpdateRemainingSoft  true  "remaining data"
 // @Success      200  {string}  string
 // @Failure      400  {object}  models.ErrorResp
 // @Failure      404  {object}  models.ErrorResp
@@ -187,6 +189,7 @@ func (h *Handler) UpdateRemaining(ctx *gin.Context) {
 	}
 
 	remaining.Id = ctx.Param("id")
+	remaining.TotalPrice = float64(remaining.Count) * remaining.Price
 	resp, err := h.strg.Remaining().Update(&remaining)
 	if err != nil {
 		h.log.Error("error remaining update:", logger.Error(err))
@@ -199,9 +202,9 @@ func (h *Handler) UpdateRemaining(ctx *gin.Context) {
 
 // DeleteRemaining godoc
 // @Router       /remaining/{id} [DELETE]
-// @Summary      DELETE REMAING BY ID
+// @Summary      DELETE REMAINING BY ID
 // @Description  deletes remaining by id
-// @Tags         REMAING
+// @Tags         REMAINING
 // @Accept       json
 // @Produce      json
 // @Param        id    path     string  true  "id of remaining" format(uuid)
@@ -221,4 +224,3 @@ func (h *Handler) DeleteRemaining(ctx *gin.Context) {
 
 	ctx.JSON(http.StatusOK, gin.H{"code": http.StatusOK, "message": "success"})
 }
-*/

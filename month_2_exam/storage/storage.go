@@ -9,7 +9,7 @@ type StorageI interface {
 	Product() ProductRepoI
 	ComingTable() ComingTableRepoI
 	ComingTableProduct() ComingTableProductRepoI
-	Remainin() RemainingRepoI
+	Remaining() RemainingRepoI
 }
 
 type BranchRepoI interface {

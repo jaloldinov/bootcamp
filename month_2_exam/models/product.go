@@ -40,9 +40,10 @@ type UpdateProduct struct {
 }
 
 type ProductGetListRequest struct {
-	Page   int    `json:"page"`
-	Limit  int    `json:"limit"`
-	Search string `json:"search"`
+	Page    int    `json:"page"`
+	Limit   int    `json:"limit"`
+	Name    string `json:"name"`
+	Barcode string `json:"barcode"`
 }
 
 type ProductGetListResponse struct {

@@ -37,12 +37,17 @@ func NewServer(h *handler.Handler) *gin.Engine {
 	r.DELETE("/coming_table/:id", h.DeleteComingTable)
 
 	r.POST("/coming_product/:coming_table_id", h.CreateComingTableProduct)
+
 	r.GET("/coming_product/:id", h.GetByIDComingTableProduct)
 	r.GET("/coming_product", h.GetListComingTableProduct)
 	r.PUT("/coming_product/:id", h.UpdateComingTableProduct)
 	r.DELETE("/coming_product/:id", h.DeleteComingTableProduct)
 
 	r.POST("/do_income/:coming_table_id", h.CreateRemaining)
+	r.GET("/remaining/:id", h.GetByIDRemaining)
+	r.GET("/remaining", h.GetListRemaining)
+	r.PUT("/remaining/:id", h.UpdateRemaining)
+	r.DELETE("/remaining/:id", h.DeleteRemaining)
 
 	url := ginSwagger.URL("swagger/doc.json") // The url pointing to API definition
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))

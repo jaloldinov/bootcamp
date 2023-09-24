@@ -120,9 +120,14 @@ func (r *productRepo) GetList(req *models.ProductGetListRequest) (*models.Produc
 			"updated_at" 
 		FROM "product"
 	`
-	if req.Search != "" {
-		filter += ` AND ("barcode" = :search) `
-		params["search"] = req.Search
+	if req.Name != "" {
+		filter += ` AND "name" ILIKE '%' || :name || '%' `
+		params["name"] = req.Name
+	}
+
+	if req.Barcode != "" {
+		filter += ` AND ("barcode" = :barcode) `
+		params["barcode"] = req.Barcode
 	}
 
 	offset := (req.Page - 1) * req.Limit
