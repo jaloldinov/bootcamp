@@ -66,9 +66,9 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 	barcode := models.ComingTableProductBarcode{Barcode: barcodeQ, ComingTableId: comingTableID}
 	id, err := h.strg.ComingTableProduct().CheckExistProduct(&barcode)
 	if err != nil {
-		h.log.Info("product or coming_id not found:", logger.Error(err))
+		h.log.Info("product or coming_table_id not found:", logger.Error(err))
 
-		// if not exists, ADD Coming product table
+		// if product or coming_table_id is not exists, ADD Coming product table
 		resp, err := h.strg.ComingTableProduct().Create(&coming_product)
 		if err != nil {
 			h.log.Error("error coming_product create:", logger.Error(err))
@@ -86,7 +86,7 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 		CategoryId:     coming_product.CategoryId,
 		ProductName:    coming_product.ProductName,
 		ProductPrice:   coming_product.ProductPrice,
-		ProductBarcode: coming_product.ProductBarcode,
+		ProductBarcode: barcodeQ,
 		Count:          coming_product.Count,
 		TotalPrice:     (productDetails.Price * float64(coming_product.Count)),
 		ComingTableId:  comingTableID,

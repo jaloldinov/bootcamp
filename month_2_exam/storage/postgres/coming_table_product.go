@@ -270,7 +270,7 @@ func (r *comingTableProduct) CheckExistProduct(req *models.ComingTableProductBar
 
 	query := `
 		SELECT
-		    "id"
+			"id"
 		FROM "coming_table_product"
 		WHERE "barcode" = $1 and "coming_table_id" = $2`
 
@@ -292,18 +292,20 @@ func (r *comingTableProduct) UpdateIdExists(req *models.UpdateComingTableProduct
 			"coming_table_product"
 		SET
 			"category_id" = $1,
-			"name" = $2,
-			"price" = $3,
-			"count" = "count" + $4,
-			"total_price" = "total_price" + $5,
-			"coming_table_id" = $6,
+			"barcode" = $2,
+			"name" = $3,
+			"price" = $4,
+			"count" = "count" + $5,
+			"total_price" = "total_price" + $6,
+			"coming_table_id" = $7,
 			"updated_at" = NOW()
 		WHERE
-			"id" = $7
+			"id" = $8
 	`
 
 	result, err := r.db.Exec(context.Background(), query,
 		req.CategoryId,
+		req.ProductBarcode,
 		req.ProductName,
 		req.ProductPrice,
 		req.Count,
