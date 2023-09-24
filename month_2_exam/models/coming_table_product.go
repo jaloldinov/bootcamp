@@ -5,13 +5,12 @@ type ComingTableProductPrimaryKey struct {
 }
 
 type ComingTableProductBarcode struct {
-	Barcode string `json:"barcode"`
+	Barcode       string `json:"barcode"`
+	ComingTableId string `json:"coming_table_id"`
 }
 
-type CreateComingTableProductInit struct {
-	ProductBarcode string `json:"barcode"`
-	Count          int    `json:"count"`
-	ComingTableId  string `json:"coming_table_id"`
+type CreateComingTableProductCount struct {
+	Count int `json:"count"`
 }
 
 type CreateComingTableProduct struct {

@@ -258,14 +258,19 @@ func (r *comingTableRepo) UpdateStatus(req *models.ComingTablePrimaryKey) (strin
 func (r *comingTableRepo) GetStatus(req *models.ComingTablePrimaryKey) error {
 	var status sql.NullString
 
+	uuidValue, err := uuid.Parse(req.Id)
+	if err != nil {
+		return fmt.Errorf("invalid UUID format: %v", err)
+	}
+
 	query := `
 		SELECT
 			"status"
 		FROM "coming_table"
-		WHERE 	"id" = $1
+		WHERE "id" = $1::uuid
 	`
 
-	err := r.db.QueryRow(context.Background(), query, req.Id).Scan(
+	err = r.db.QueryRow(context.Background(), query, uuidValue).Scan(
 		&status,
 	)
 	if err != nil {

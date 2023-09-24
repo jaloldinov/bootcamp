@@ -265,40 +265,41 @@ func (r *comingTableProduct) Delete(req *models.ComingTableProductPrimaryKey) er
 	return nil
 }
 
-func (r *comingTableProduct) CheckExistProduct(req *models.ComingTableProductBarcode) error {
-	var barcode sql.NullString
+func (r *comingTableProduct) CheckExistProduct(req *models.ComingTableProductBarcode) (string, error) {
+	var id sql.NullString
 
 	query := `
 		SELECT
-			"barcode"
+		    "id"
 		FROM "coming_table_product"
-		WHERE "barcode" = $1`
+		WHERE "barcode" = $1 and "coming_table_id" = $2`
 
-	err := r.db.QueryRow(context.Background(), query, req.Barcode).Scan(&barcode)
+	err := r.db.QueryRow(context.Background(), query, req.Barcode, req.ComingTableId).Scan(&id)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return errors.New("not found")
+			return "", errors.New("not found")
 		}
-		return err
+		return "", err
 	}
 
-	return nil
+	return id.String, nil
 }
 
 func (r *comingTableProduct) UpdateIdExists(req *models.UpdateComingTableProduct) (string, error) {
-
 	query := `
 		UPDATE
 			"coming_table_product"
 		SET
-				"category_id" = $1,
-				"name" = $2,
-				"price" = $3,
-				"count" = "count" + $4,
-				"total_price" = "total_price" + $5,
-				"updated_at" = NOW()
-				WHERE "coming_table_id" = $6
+			"category_id" = $1,
+			"name" = $2,
+			"price" = $3,
+			"count" = "count" + $4,
+			"total_price" = "total_price" + $5,
+			"coming_table_id" = $6,
+			"updated_at" = NOW()
+		WHERE
+			"id" = $7
 	`
 
 	result, err := r.db.Exec(context.Background(), query,
@@ -308,14 +309,15 @@ func (r *comingTableProduct) UpdateIdExists(req *models.UpdateComingTableProduct
 		req.Count,
 		req.TotalPrice,
 		req.ComingTableId,
+		req.Id,
 	)
 	if err != nil {
 		return "", err
 	}
 
 	if result.RowsAffected() == 0 {
-		return "", fmt.Errorf("coming_table_product with coming_table_id %s not found", req.Id)
+		return "", fmt.Errorf("coming_table_product with id %s not found", req.ComingTableId)
 	}
 
-	return req.Id, nil
+	return req.ComingTableId, nil
 }

@@ -630,7 +630,9 @@ const docTemplate = `{
                         }
                     }
                 }
-            },
+            }
+        },
+        "/coming_product/{coming_table_id}": {
             "post": {
                 "description": "adds coming_product data to db based on given info in body",
                 "consumes": [
@@ -645,12 +647,26 @@ const docTemplate = `{
                 "summary": "CREATE COMING TABLE PRODUCT",
                 "parameters": [
                     {
-                        "description": "coming_product data",
+                        "type": "string",
+                        "description": "Coming Table ID",
+                        "name": "coming_table_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Barcode value",
+                        "name": "barcode",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "description": "coming_product count",
                         "name": "data",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.CreateComingTableProductInit"
+                            "$ref": "#/definitions/models.CreateComingTableProductCount"
                         }
                     }
                 ],
@@ -1619,15 +1635,9 @@ const docTemplate = `{
                 }
             }
         },
-        "models.CreateComingTableProductInit": {
+        "models.CreateComingTableProductCount": {
             "type": "object",
             "properties": {
-                "barcode": {
-                    "type": "string"
-                },
-                "coming_table_id": {
-                    "type": "string"
-                },
                 "count": {
                     "type": "integer"
                 }

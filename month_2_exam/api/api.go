@@ -36,7 +36,7 @@ func NewServer(h *handler.Handler) *gin.Engine {
 	r.PUT("/coming_table/:id", h.UpdateComingTable)
 	r.DELETE("/coming_table/:id", h.DeleteComingTable)
 
-	r.POST("/coming_product", h.CreateComingTableProduct)
+	r.POST("/coming_product/:coming_table_id", h.CreateComingTableProduct)
 	r.GET("/coming_product/:id", h.GetByIDComingTableProduct)
 	r.GET("/coming_product", h.GetListComingTableProduct)
 	r.PUT("/coming_product/:id", h.UpdateComingTableProduct)

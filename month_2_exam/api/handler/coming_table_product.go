@@ -10,20 +10,25 @@ import (
 )
 
 // CreateComingTableProduct godoc
-// @Router       /coming_product [POST]
+// @Router       /coming_product/{coming_table_id} [POST]
 // @Summary      CREATE COMING TABLE PRODUCT
 // @Description adds coming_product data to db based on given info in body
 // @Tags         COMING TABLE PRODUCT
 // @Accept       json
 // @Produce      json
-// @Param        data  body      models.CreateComingTableProductInit  true  "coming_product data"
+// @Param        coming_table_id path string true "Coming Table ID"
+// @Param        barcode query string true "Barcode value"
+// @Param        data  body      models.CreateComingTableProductCount  true  "coming_product count"
 // @Success      200  {string}  string
 // @Failure      400  {object}  models.ErrorResp
 // @Failure      404  {object}  models.ErrorResp
 // @Failure      500  {object}  models.ErrorResp
 func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
-	var coming_product models.CreateComingTableProduct
 
+	comingTableID := ctx.Param("coming_table_id")
+	barcodeQ := ctx.Query("barcode")
+
+	var coming_product models.CreateComingTableProduct
 	err := ctx.ShouldBind(&coming_product)
 	if err != nil {
 		h.log.Error("error while binding coming_product:", logger.Error(err))
@@ -32,7 +37,7 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 	}
 
 	// checking coming_table info weather it is in_process or finished
-	comingTableId := models.ComingTablePrimaryKey{Id: coming_product.ComingTableId}
+	comingTableId := models.ComingTablePrimaryKey{Id: comingTableID}
 	err = h.strg.ComingTable().GetStatus(&comingTableId)
 	if err != nil {
 		h.log.Error("error while getting coming table status", logger.Error(err))
@@ -41,11 +46,11 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 	}
 
 	// get product details (name, price, category_id)
-	product := models.ProductBarcodeRequest{Barcode: coming_product.ProductBarcode}
-	productDetails, err := h.strg.Product().GetByBarcode(&product)
+	productBarcode := models.ProductBarcodeRequest{Barcode: barcodeQ}
+	productDetails, err := h.strg.Product().GetByBarcode(&productBarcode)
 	if err != nil {
 		h.log.Error("error while getting product details:", logger.Error(err))
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Not Found Product"})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Not Found Product with that barcode"})
 		return
 	}
 
@@ -53,13 +58,15 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 	coming_product.CategoryId = productDetails.CategoryId
 	coming_product.ProductName = productDetails.Name
 	coming_product.ProductPrice = productDetails.Price
+	coming_product.ProductBarcode = barcodeQ
 	coming_product.TotalPrice = (productDetails.Price * float64(coming_product.Count))
+	coming_product.ComingTableId = comingTableID
 
 	//  Checking exists product by shtrixcode in coming_table_product table
-	barcode := models.ComingTableProductBarcode{Barcode: coming_product.ProductBarcode}
-	err = h.strg.ComingTableProduct().CheckExistProduct(&barcode)
+	barcode := models.ComingTableProductBarcode{Barcode: barcodeQ, ComingTableId: comingTableID}
+	id, err := h.strg.ComingTableProduct().CheckExistProduct(&barcode)
 	if err != nil {
-		h.log.Info("product not found:", logger.Error(err))
+		h.log.Info("product or coming_id not found:", logger.Error(err))
 
 		// if not exists, ADD Coming product table
 		resp, err := h.strg.ComingTableProduct().Create(&coming_product)
@@ -75,18 +82,18 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 
 	// if exits Update Coming Product Table
 	var updatingData = models.UpdateComingTableProduct{
-		Id:             comingTableId.Id,
+		Id:             id,
 		CategoryId:     coming_product.CategoryId,
 		ProductName:    coming_product.ProductName,
 		ProductPrice:   coming_product.ProductPrice,
 		ProductBarcode: coming_product.ProductBarcode,
 		Count:          coming_product.Count,
 		TotalPrice:     (productDetails.Price * float64(coming_product.Count)),
-		ComingTableId:  coming_product.ComingTableId,
+		ComingTableId:  comingTableID,
 	}
 	r, err := h.strg.ComingTableProduct().UpdateIdExists(&updatingData)
 	if err != nil {
-		h.log.Error("error coming_table_product update:", logger.Error(err))
+		h.log.Info("error coming_table_product update:", logger.Error(err))
 		ctx.JSON(http.StatusInternalServerError, err.Error())
 		return
 	}

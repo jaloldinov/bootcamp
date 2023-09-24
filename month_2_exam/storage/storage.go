@@ -55,6 +55,6 @@ type ComingTableProductRepoI interface {
 	Update(*models.UpdateComingTableProduct) (string, error)
 	Delete(*models.ComingTableProductPrimaryKey) error
 
-	CheckExistProduct(*models.ComingTableProductBarcode) error
+	CheckExistProduct(*models.ComingTableProductBarcode) (string, error)
 	UpdateIdExists(req *models.UpdateComingTableProduct) (string, error)
 }
