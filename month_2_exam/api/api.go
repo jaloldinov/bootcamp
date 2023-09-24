@@ -44,6 +44,7 @@ func NewServer(h *handler.Handler) *gin.Engine {
 	r.DELETE("/coming_product/:id", h.DeleteComingTableProduct)
 
 	r.POST("/do_income/:coming_table_id", h.CreateRemaining)
+
 	r.GET("/remaining/:id", h.GetByIDRemaining)
 	r.GET("/remaining", h.GetListRemaining)
 	r.PUT("/remaining/:id", h.UpdateRemaining)
