@@ -65,7 +65,8 @@ func (h *Handler) CreateRemaining(ctx *gin.Context) {
 			return
 		}
 		ctx.JSON(http.StatusCreated, gin.H{"code": http.StatusCreated, "message": "added new remaining", "resp": resp})
-
+		// change status
+		h.strg.ComingTable().UpdateStatus(&comingTableId)
 		return
 	}
 

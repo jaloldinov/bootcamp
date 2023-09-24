@@ -227,15 +227,22 @@ func (r *remainingRepo) Delete(req *models.RemainingPrimaryKey) error {
 // check raming by branch id and barcode
 func (r *remainingRepo) CheckRemaing(req *models.CheckingRemaining) (string, error) {
 	var in sql.NullString
+	var params map[string]interface{}
 
 	query := `
 		SELECT
 			"id"
 		FROM "remaining"
-		WHERE "branch_id" = $1 AND "barcode" = $2
+		WHERE "branch_id" = :branch_id AND "barcode" = :barcode
 	`
 
-	err := r.db.QueryRow(context.Background(), query, req.BranchId, req.Barcode).Scan(
+	params = map[string]interface{}{
+		"branch_id": req.BranchId,
+		"barcode":   req.Barcode,
+	}
+	queryN, args := helper.ReplaceQueryParams(query, params)
+
+	err := r.db.QueryRow(context.Background(), queryN, args...).Scan(
 		&in,
 	)
 	if err != nil {
