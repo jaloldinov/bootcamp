@@ -323,3 +323,54 @@ func (r *comingTableProduct) UpdateIdExists(req *models.UpdateComingTableProduct
 
 	return req.ComingTableId, nil
 }
+
+func (r *comingTableProduct) GetByComingTableId(req *models.ComingTableProductPrimaryKey) (*models.ComingTableProduct, error) {
+
+	var (
+		id          sql.NullString
+		category_id sql.NullString
+		name        sql.NullString
+		price       sql.NullFloat64
+		barcode     sql.NullString
+		count       sql.NullInt16
+		total_price sql.NullFloat64
+	)
+
+	query := `
+			SELECT
+					"id",
+					"category_id",
+					"name",
+					"price",
+					"barcode",
+					sum("count"),
+					sum("total_price")
+			FROM "coming_table_product"
+			WHERE "coming_table_id" = $1 
+			GROUP BY "id", "barcode"
+			`
+
+	err := r.db.QueryRow(context.Background(), query, req.Id).Scan(
+		&id,
+		&category_id,
+		&name,
+		&price,
+		&barcode,
+		&count,
+		&total_price,
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &models.ComingTableProduct{
+		Id:             id.String,
+		CategoryId:     category_id.String,
+		ProductName:    name.String,
+		ProductPrice:   price.Float64,
+		ProductBarcode: barcode.String,
+		Count:          int(count.Int16),
+		TotalPrice:     total_price.Float64,
+	}, nil
+}

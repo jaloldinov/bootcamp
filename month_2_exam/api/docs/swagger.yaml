@@ -948,6 +948,39 @@ paths:
       summary: UPDATE COMING TABLE
       tags:
       - COMING TABLE
+  /do_income/{coming_table_id}:
+    post:
+      consumes:
+      - application/json
+      description: adds remaining data to db based on given coming_table_id
+      parameters:
+      - description: Coming Table ID
+        in: path
+        name: coming_table_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: CREATE REMAING
+      tags:
+      - REMAING
   /product:
     get:
       consumes:

@@ -16,6 +16,7 @@ type store struct {
 	products           *productRepo
 	comingTable        *comingTableRepo
 	comingTableProduct *comingTableProduct
+	remainings         *remainingRepo
 }
 
 func NewStorage(ctx context.Context, cfg config.Config) (storage.StorageI, error) {
@@ -76,6 +77,13 @@ func (s *store) ComingTableProduct() storage.ComingTableProductRepoI {
 		s.comingTableProduct = NewComingTableProductRepo(s.db)
 	}
 	return s.comingTableProduct
+}
+
+func (s *store) Remainin() storage.RemainingRepoI {
+	if s.remainings == nil {
+		s.remainings = NewRemainingRepo(s.db)
+	}
+	return s.remainings
 }
 
 func (s *store) Close() {

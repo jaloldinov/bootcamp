@@ -255,31 +255,34 @@ func (r *comingTableRepo) UpdateStatus(req *models.ComingTablePrimaryKey) (strin
 	return req.Id, nil
 }
 
-func (r *comingTableRepo) GetStatus(req *models.ComingTablePrimaryKey) error {
+func (r *comingTableRepo) GetStatus(req *models.ComingTablePrimaryKey) (string, error) {
 	var status sql.NullString
+	var branch_id sql.NullString
 
 	uuidValue, err := uuid.Parse(req.Id)
 	if err != nil {
-		return fmt.Errorf("invalid UUID format: %v", err)
+		return "", fmt.Errorf("invalid UUID format: %v", err)
 	}
 
 	query := `
 		SELECT
-			"status"
+			"status",
+			"branch_id"
 		FROM "coming_table"
 		WHERE "id" = $1::uuid
 	`
 
 	err = r.db.QueryRow(context.Background(), query, uuidValue).Scan(
 		&status,
+		&branch_id,
 	)
 	if err != nil {
-		return err
+		return "", err
 	}
 
 	if status.String == "finished" {
-		return fmt.Errorf("coming table already finished")
+		return "", fmt.Errorf("coming table already finished")
 	}
 
-	return nil
+	return branch_id.String, nil
 }

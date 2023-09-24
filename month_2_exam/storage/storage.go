@@ -9,6 +9,7 @@ type StorageI interface {
 	Product() ProductRepoI
 	ComingTable() ComingTableRepoI
 	ComingTableProduct() ComingTableProductRepoI
+	Remainin() RemainingRepoI
 }
 
 type BranchRepoI interface {
@@ -45,7 +46,7 @@ type ComingTableRepoI interface {
 	UpdateStatus(*models.ComingTablePrimaryKey) (string, error)
 	Delete(*models.ComingTablePrimaryKey) error
 
-	GetStatus(*models.ComingTablePrimaryKey) error
+	GetStatus(*models.ComingTablePrimaryKey) (string, error)
 }
 
 type ComingTableProductRepoI interface {
@@ -57,4 +58,16 @@ type ComingTableProductRepoI interface {
 
 	CheckExistProduct(*models.ComingTableProductBarcode) (string, error)
 	UpdateIdExists(req *models.UpdateComingTableProduct) (string, error)
+	GetByComingTableId(req *models.ComingTableProductPrimaryKey) (*models.ComingTableProduct, error)
+}
+
+type RemainingRepoI interface {
+	Create(*models.CreateRemaining) (string, error)
+	GetByID(*models.RemainingPrimaryKey) (*models.Remaining, error)
+	GetList(*models.RemainingGetListRequest) (*models.RemainingGetListResponse, error)
+	Update(*models.UpdateRemaining) (string, error)
+	Delete(*models.RemainingPrimaryKey) error
+
+	CheckRemaing(*models.CheckingRemaining) (string, error)
+	UpdateExists(req *models.UpdateRemaining) (string, error)
 }

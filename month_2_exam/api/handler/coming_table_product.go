@@ -38,7 +38,7 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 
 	// checking coming_table info weather it is in_process or finished
 	comingTableId := models.ComingTablePrimaryKey{Id: comingTableID}
-	err = h.strg.ComingTable().GetStatus(&comingTableId)
+	_, err = h.strg.ComingTable().GetStatus(&comingTableId)
 	if err != nil {
 		h.log.Error("error while getting coming table status", logger.Error(err))
 		ctx.JSON(http.StatusInternalServerError, err.Error())
@@ -97,7 +97,7 @@ func (h *Handler) CreateComingTableProduct(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, err.Error())
 		return
 	}
-	ctx.JSON(http.StatusCreated, gin.H{"message": "updated existing coming_product_table", "resp": r})
+	ctx.JSON(http.StatusOK, gin.H{"message": "updated existing coming_product_table", "resp": r})
 }
 
 // ListComingTableProducts godoc

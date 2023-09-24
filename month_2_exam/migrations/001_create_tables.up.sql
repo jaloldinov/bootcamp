@@ -42,7 +42,7 @@ CREATE TABLE "coming_table_product" (
   "category_id" uuid,
   "name" varchar NOT NULL,
   "price" numeric NOT NULL,
-  "barcode" varchar UNIQUE NOT NULL,
+  "barcode" varchar  NOT NULL,
   "count" numeric NOT NULL DEFAULT 0,
   "total_price" numeric DEFAULT 0,
   "coming_table_id" uuid,
