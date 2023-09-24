@@ -99,7 +99,7 @@ func (h *Handler) GetByIDProduct(ctx *gin.Context) {
 	resp, err := h.strg.Product().GetByID(&models.ProductPrimaryKey{Id: id})
 	if err != nil {
 		h.log.Error("error get product:", logger.Error(err))
-		ctx.JSON(http.StatusInternalServerError, err.Error())
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Not Found Product"})
 		return
 	}
 

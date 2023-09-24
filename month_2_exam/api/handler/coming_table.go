@@ -98,7 +98,7 @@ func (h *Handler) GetListComingTable(ctx *gin.Context) {
 func (h *Handler) GetByIDComingTable(ctx *gin.Context) {
 	id := ctx.Param("id")
 
-	resp, err := h.strg.ComingTable().GetByID(&models.ComingTableComingIdKey{ComingId: id})
+	resp, err := h.strg.ComingTable().GetByID(&models.ComingTablePrimaryKey{Id: id})
 	if err != nil {
 		h.log.Error("error get coming_table:", logger.Error(err))
 		ctx.JSON(http.StatusInternalServerError, err.Error())
@@ -140,31 +140,6 @@ func (h *Handler) UpdateComingTable(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{"code": http.StatusOK, "message": "success", "resp": resp})
-}
-
-// UpdateComingTableStatus godoc
-// @Router       /doincome/{id} [PUT]
-// @Summary      UPDATES STATUS "in_process" to "finished"
-// @Description  UPDATES COMING TABLE BASED ON GIVEN DATA AND ID
-// @Tags         COMING TABLE
-// @Produce      json
-// @Param        id    path     string  true  "id of coming_table" format(uuid)
-// @Success      200  {string}  string
-// @Failure      400  {object}  models.ErrorResp
-// @Failure      404  {object}  models.ErrorResp
-// @Failure      500  {object}  models.ErrorResp
-func (h *Handler) UpdateComingTableStatus(ctx *gin.Context) {
-	var coming models.ComingTablePrimaryKey
-
-	coming.Id = ctx.Param("id")
-	resp, err := h.strg.ComingTable().UpdateStatus(&coming)
-	if err != nil {
-		h.log.Error("error coming_table_status update:", logger.Error(err))
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
-
-	ctx.JSON(http.StatusOK, gin.H{"code": http.StatusOK, "message": "status changed to 'finish'", "resp": resp})
 }
 
 // DeleteComingTable godoc

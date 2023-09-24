@@ -231,3 +231,38 @@ func (r *productRepo) Delete(req *models.ProductPrimaryKey) error {
 
 	return nil
 }
+
+// get by barcode
+func (r *productRepo) GetByBarcode(req *models.ProductBarcodeRequest) (*models.ProductBarcodeResponse, error) {
+
+	var (
+		name        sql.NullString
+		price       sql.NullFloat64
+		category_id sql.NullString
+	)
+
+	query := `
+		SELECT
+			"name",
+			"price",		
+			"category_id"
+		FROM "product"
+		WHERE "barcode" = $1
+	`
+
+	err := r.db.QueryRow(context.Background(), query, req.Barcode).Scan(
+		&name,
+		&price,
+		&category_id,
+	)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &models.ProductBarcodeResponse{
+		Name:       name.String,
+		Price:      price.Float64,
+		CategoryId: category_id.String,
+	}, nil
+}

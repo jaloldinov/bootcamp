@@ -4,6 +4,16 @@ type ProductPrimaryKey struct {
 	Id string `json:"id"`
 }
 
+type ProductBarcodeRequest struct {
+	Barcode string `json:"barcode"`
+}
+
+type ProductBarcodeResponse struct {
+	Name       string  `json:"name"`
+	Price      float64 `json:"price"`
+	CategoryId string  `json:"category_id"`
+}
+
 type CreateProduct struct {
 	Name       string  `json:"name"`
 	Price      float64 `json:"price"`

@@ -71,6 +71,38 @@ definitions:
           $ref: '#/definitions/models.ComingTable'
         type: array
     type: object
+  models.ComingTableProduct:
+    properties:
+      barcode:
+        type: string
+      category_id:
+        type: string
+      coming_table_id:
+        type: string
+      count:
+        type: integer
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      total_price:
+        type: number
+      updated_at:
+        type: string
+    type: object
+  models.ComingTableProductGetListResponse:
+    properties:
+      count:
+        type: integer
+      products:
+        items:
+          $ref: '#/definitions/models.ComingTableProduct'
+        type: array
+    type: object
   models.CreateBranch:
     properties:
       address:
@@ -93,6 +125,34 @@ definitions:
         type: string
       coming_id:
         type: string
+      date_time:
+        type: string
+    type: object
+  models.CreateComingTableProduct:
+    properties:
+      barcode:
+        type: string
+      category_id:
+        type: string
+      coming_table_id:
+        type: string
+      count:
+        type: integer
+      name:
+        type: string
+      price:
+        type: number
+      total_price:
+        type: number
+    type: object
+  models.CreateComingTableProductInit:
+    properties:
+      barcode:
+        type: string
+      coming_table_id:
+        type: string
+      count:
+        type: integer
     type: object
   models.CreateProduct:
     properties:
@@ -507,6 +567,193 @@ paths:
       summary: UPDATE CATEGORY
       tags:
       - CATEGORY
+  /coming_product:
+    get:
+      consumes:
+      - application/json
+      description: gets all coming_product based on limit, page and search by name
+      parameters:
+      - default: 10
+        description: limit
+        in: query
+        minimum: 1
+        name: limit
+        type: integer
+      - default: 1
+        description: page
+        in: query
+        minimum: 1
+        name: page
+        type: integer
+      - description: category_id
+        in: query
+        name: category_id
+        type: string
+      - description: barcode
+        in: query
+        name: barcode
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ComingTableProductGetListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: LIST COMING TABLE PRODUCT
+      tags:
+      - COMING TABLE PRODUCT
+    post:
+      consumes:
+      - application/json
+      description: adds coming_product data to db based on given info in body
+      parameters:
+      - description: coming_product data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateComingTableProductInit'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: CREATE COMING TABLE PRODUCT
+      tags:
+      - COMING TABLE PRODUCT
+  /coming_product/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: deletes coming_product by id
+      parameters:
+      - description: id of coming_product
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: DELETE COMING TABLE PRODUCT BY ID
+      tags:
+      - COMING TABLE PRODUCT
+    get:
+      consumes:
+      - application/json
+      description: gets coming_product by ID
+      parameters:
+      - description: ComingTableProduct ID
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ComingTableProduct'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: GET BY ID
+      tags:
+      - COMING TABLE PRODUCT
+    put:
+      consumes:
+      - application/json
+      description: UPDATES COMING TABLE PRODUCT BASED ON GIVEN DATA AND ID
+      parameters:
+      - description: id of coming_product
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: coming_product data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateComingTableProduct'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/models.ErrorResp'
+      summary: UPDATE COMING TABLE PRODUCT
+      tags:
+      - COMING TABLE PRODUCT
   /coming_table:
     get:
       consumes:
@@ -692,38 +939,6 @@ paths:
           schema:
             $ref: '#/definitions/models.ErrorResp'
       summary: UPDATE COMING TABLE
-      tags:
-      - COMING TABLE
-  /doincome/{id}:
-    put:
-      description: UPDATES COMING TABLE BASED ON GIVEN DATA AND ID
-      parameters:
-      - description: id of coming_table
-        format: uuid
-        in: path
-        name: id
-        required: true
-        type: string
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            type: string
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/models.ErrorResp'
-        "404":
-          description: Not Found
-          schema:
-            $ref: '#/definitions/models.ErrorResp'
-        "500":
-          description: Internal Server Error
-          schema:
-            $ref: '#/definitions/models.ErrorResp'
-      summary: UPDATES STATUS "in_process" to "finished"
       tags:
       - COMING TABLE
   /product:

@@ -34,12 +34,13 @@ func (r *comingTableRepo) Create(req *models.CreateComingTable) (string, error) 
 					"branch_id",
 					"date_time",
 					"created_at")
-				VALUES ($1, $2, $3, NOW(), NOW())`
+				VALUES ($1, $2, $3, $4, NOW())`
 
 	_, err := r.db.Exec(context.Background(), query,
 		id,
 		req.ComingId,
 		req.BranchId,
+		req.DateTime,
 	)
 
 	if err != nil {
@@ -49,7 +50,7 @@ func (r *comingTableRepo) Create(req *models.CreateComingTable) (string, error) 
 	return id, nil
 }
 
-func (r *comingTableRepo) GetByID(req *models.ComingTableComingIdKey) (*models.ComingTable, error) {
+func (r *comingTableRepo) GetByID(req *models.ComingTablePrimaryKey) (*models.ComingTable, error) {
 
 	var (
 		id         sql.NullString
@@ -74,7 +75,7 @@ func (r *comingTableRepo) GetByID(req *models.ComingTableComingIdKey) (*models.C
 		WHERE id = $1
 	`
 
-	err := r.db.QueryRow(context.Background(), query, req.ComingId).Scan(
+	err := r.db.QueryRow(context.Background(), query, req.Id).Scan(
 		&id,
 		&coming_id,
 		&branch_id,
@@ -215,6 +216,22 @@ func (r *comingTableRepo) Update(req *models.UpdateComingTable) (string, error) 
 	return req.Id, nil
 }
 
+func (r *comingTableRepo) Delete(req *models.ComingTablePrimaryKey) error {
+	ctx := context.Background()
+
+	result, err := r.db.Exec(ctx, "DELETE FROM coming_table WHERE id = $1", req.Id)
+	if err != nil {
+		return err
+	}
+
+	if result.RowsAffected() == 0 {
+		return fmt.Errorf("coming_table with ID %s not found", req.Id)
+
+	}
+
+	return nil
+}
+
 func (r *comingTableRepo) UpdateStatus(req *models.ComingTablePrimaryKey) (string, error) {
 
 	query := `
@@ -238,17 +255,25 @@ func (r *comingTableRepo) UpdateStatus(req *models.ComingTablePrimaryKey) (strin
 	return req.Id, nil
 }
 
-func (r *comingTableRepo) Delete(req *models.ComingTablePrimaryKey) error {
-	ctx := context.Background()
+func (r *comingTableRepo) GetStatus(req *models.ComingTablePrimaryKey) error {
+	var status sql.NullString
 
-	result, err := r.db.Exec(ctx, "DELETE FROM coming_table WHERE id = $1", req.Id)
+	query := `
+		SELECT
+			"status"
+		FROM "coming_table"
+		WHERE 	"id" = $1
+	`
+
+	err := r.db.QueryRow(context.Background(), query, req.Id).Scan(
+		&status,
+	)
 	if err != nil {
 		return err
 	}
 
-	if result.RowsAffected() == 0 {
-		return fmt.Errorf("coming_table with ID %s not found", req.Id)
-
+	if status.String == "finished" {
+		return fmt.Errorf("coming table already finished")
 	}
 
 	return nil

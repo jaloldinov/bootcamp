@@ -4,13 +4,10 @@ type ComingTablePrimaryKey struct {
 	Id string `json:"id"`
 }
 
-type ComingTableComingIdKey struct {
-	ComingId string `json:"coming_id"`
-}
-
 type CreateComingTable struct {
 	ComingId string `json:"coming_id"`
 	BranchId string `json:"branch_id"`
+	DateTime string `json:"date_time"`
 }
 
 type ComingTable struct {
@@ -21,6 +18,10 @@ type ComingTable struct {
 	Status    string `json:"status"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
+}
+
+type ComingIdResponse struct {
+	Status string `json:"status"`
 }
 
 type UpdateComingTable struct {
