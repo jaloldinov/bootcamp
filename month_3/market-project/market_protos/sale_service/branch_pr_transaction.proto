@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package sale_service;
+option go_package = "genproto/sale_service";
+import "sale.proto";
+
+service BranchPrTransactionService {
+    rpc Create(CreateBranchPrTransactionRequest) returns (CreateBranchPrTransactionResponse) {}
+    rpc Get(IdRequest) returns (GetBranchPrTransactionResponse) {}
+    rpc List(ListBranchPrTransactionRequest) returns (ListBranchPrTransactionResponse) {}
+    rpc Update(UpdateBranchPrTransactionRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateBranchPrTransactionRequest { 
+    string branch_id = 1;
+    string staff_id = 2;
+    string product_id = 3;
+    float price = 4;
+    string type = 5;
+    int32 quantity = 6;
+}
+
+message BranchPrTransaction { 
+    string id = 1;
+    string branch_id = 2;
+    string staff_id = 3;
+    string product_id = 4;
+    float price = 5;
+    string type = 6;
+    int32 quantity = 7;
+    string created_at = 8;
+    string updated_at = 9;
+    string deleted_at = 10;
+}
+
+message CreateBranchPrTransactionResponse {
+    string id = 1;
+}
+
+message GetBranchPrTransactionResponse { 
+    BranchPrTransaction branch = 1;
+}
+
+message UpdateBranchPrTransactionRequest {
+    string id = 1;
+    string branch_id = 2;
+    string staff_id = 3;
+    string product_id = 4;
+    float price = 5;
+    string type = 6;
+    int32 quantity = 7;
+}
+
+message ListBranchPrTransactionRequest {
+    int32 limit = 1;
+    int32 page = 2;
+}
+
+message ListBranchPrTransactionResponse {
+     repeated BranchPrTransaction branches = 1;
+     int32 count = 2;
+}
+

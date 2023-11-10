@@ -1,0 +1,4 @@
+migrate create -ext sql -dir ./migrations -seq -digits 3 create_tables
+
+migrate -path ./migrations -database 'postgres://postgres:Muhammad@localhost:5432/postgres?sslmode=disable' up
+migrate -path ./migrations -database 'postgres://postgres:Muhammad@localhost:5432/postgres?sslmode=disable' up

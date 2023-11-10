@@ -1,0 +1,316 @@
+definitions:
+  models.CreateUser:
+    properties:
+      age:
+        type: string
+      login:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+    type: object
+  models.GetAllUser:
+    properties:
+      Users:
+        items:
+          $ref: '#/definitions/models.User'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.LoginRequest:
+    properties:
+      login:
+        type: string
+      password:
+        type: string
+    type: object
+  models.LoginRespond:
+    properties:
+      token:
+        type: string
+    type: object
+  models.User:
+    properties:
+      age:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      login:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone_number:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  response.ErrorResp:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: login
+      parameters:
+      - description: data of user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LoginRespond'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: auth
+      tags:
+      - AUTH
+  /signup:
+    post:
+      consumes:
+      - application/json
+      description: CREATES USER BASED ON GIVEN DATA
+      parameters:
+      - description: user data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: CREATES USER
+      tags:
+      - AUTH
+  /user:
+    get:
+      consumes:
+      - application/json
+      description: gets all user based on limit, page and search by name
+      parameters:
+      - default: 10
+        description: limit
+        in: query
+        minimum: 1
+        name: limit
+        type: integer
+      - default: 1
+        description: page
+        in: query
+        minimum: 1
+        name: page
+        type: integer
+      - description: search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.GetAllUser'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: GET  ALL USERS
+      tags:
+      - USER
+    post:
+      consumes:
+      - application/json
+      description: CREATES USER BASED ON GIVEN DATA
+      parameters:
+      - description: user data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: CREATES USER
+      tags:
+      - USER
+  /user/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: DELETES USER BASED ON ID
+      parameters:
+      - description: id of user
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: DELETE USER BY ID
+      tags:
+      - USER
+    get:
+      consumes:
+      - application/json
+      description: get user by ID
+      parameters:
+      - description: User ID
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: GET BY ID
+      tags:
+      - USER
+    put:
+      consumes:
+      - application/json
+      description: UPDATES USER BASED ON GIVEN DATA AND ID
+      parameters:
+      - description: id of user
+        format: uuid
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: user data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: UPDATE USER BY ID
+      tags:
+      - USER
+swagger: "2.0"

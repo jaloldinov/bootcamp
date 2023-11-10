@@ -1,0 +1,1991 @@
+{
+    "error": {
+      "error": {
+        "incident_id": "string",
+        "message": "string"
+      }
+    },
+    "id": "string",
+    "message": "string",
+    "result": {
+      "detailed_cost_metrics": [
+        {
+          "name": "string",
+          "raw_metrics": [
+            {
+              "name": "string",
+              "raw_metrics": [
+                {
+                  "name": "string",
+                  "raw_metrics": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "subcosts": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "value": 0
+                }
+              ],
+              "subcosts": [
+                {
+                  "name": "string",
+                  "raw_metrics": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "subcosts": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "value": 0
+                }
+              ],
+              "value": 0
+            }
+          ],
+          "subcosts": [
+            {
+              "name": "string",
+              "raw_metrics": [
+                {
+                  "name": "string",
+                  "raw_metrics": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "subcosts": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "value": 0
+                }
+              ],
+              "subcosts": [
+                {
+                  "name": "string",
+                  "raw_metrics": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "subcosts": [
+                    {
+                      "name": "string",
+                      "raw_metrics": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "subcosts": [
+                        {
+                          "name": "string",
+                          "raw_metrics": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "subcosts": [
+                            {
+                              "name": "string",
+                              "raw_metrics": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "subcosts": [
+                                {
+                                  "name": "string",
+                                  "value": 0
+                                }
+                              ],
+                              "value": 0
+                            }
+                          ],
+                          "value": 0
+                        }
+                      ],
+                      "value": 0
+                    }
+                  ],
+                  "value": 0
+                }
+              ],
+              "value": 0
+            }
+          ],
+          "value": 0
+        }
+      ],
+      "dropped_locations": [
+        {
+          "address": "string",
+          "allow_trailers": false,
+          "can_be_merged": false,
+          "can_be_split": false,
+          "comments": "string",
+          "crossdock_mode": "string",
+          "custom_value": 0,
+          "delivery_deadline": "string",
+          "delivery_to_any": [
+            {}
+          ],
+          "depot_expiring_time": "string",
+          "depot_ready_time": "string",
+          "description": "string",
+          "drop_reason": "string",
+          "dropped_ratio": 0,
+          "hard_time_window": "string",
+          "hard_window": false,
+          "in_lifo_order": false,
+          "load_types": [
+            "string"
+          ],
+          "max_split_parts": 0,
+          "max_total_vehicles": 0,
+          "may_drop_in_crossdock": false,
+          "optional_tags": [
+            {
+              "tag": "string",
+              "value": 0
+            }
+          ],
+          "parking_service_duration_s": 0,
+          "penalty": {
+            "delivery_deadline": {
+              "fixed": 0,
+              "minute": 0
+            },
+            "early": {
+              "fixed": 0,
+              "minute": 0
+            },
+            "late": {
+              "fixed": 0,
+              "minute": 0
+            },
+            "out_of_time": {
+              "fixed": 0,
+              "minute": 0
+            },
+            "rolling_throughput": {
+              "fixed": 0,
+              "kg": 0,
+              "unit": 0,
+              "vehicle": 0
+            },
+            "throughput": {
+              "fixed": 0,
+              "kg": 0,
+              "unit": 0,
+              "vehicle": 0
+            },
+            "time_between_visits": {
+              "fixed": 0,
+              "minute": 0
+            },
+            "transit_time": {}
+          },
+          "phone": "string",
+          "pickup_from_any": false,
+          "pickup_must_reach_depot": false,
+          "point": {
+            "lat": 0,
+            "lon": 0
+          },
+          "preset_id": "string",
+          "ref": "string",
+          "required_tags": [
+            "string"
+          ],
+          "rolling_throughput": {},
+          "sequence_order": 0,
+          "service_durations": {
+            "parking": 0
+          },
+          "shared_with_company_ids": [
+            0
+          ],
+          "shipment_size": {
+            "custom": {},
+            "units": 0,
+            "volume": {
+              "align": "string",
+              "depth_m": 0,
+              "height_m": 0,
+              "type": "string",
+              "width_m": 0
+            },
+            "volume_cbm": 0,
+            "weight_kg": 0
+          },
+          "split_info": {
+            "order_ratio": 0,
+            "part_id": 0,
+            "parts_count": 0,
+            "units": 0,
+            "volume_cbm": 0,
+            "weight_kg": 0
+          },
+          "split_parts_must_fill_whole_vehicle": false,
+          "throughput": {},
+          "time_window": "string",
+          "time_windows": [
+            {
+              "hard_time_window": "string",
+              "time_window": "string"
+            }
+          ],
+          "title": "string",
+          "transit_time": {
+            "hard_limit_s": 0,
+            "limit_s": 0
+          },
+          "type": "string",
+          "use_in_proximity": false
+        }
+      ],
+      "metrics": {
+        "arrival_after_start_penalty": 0,
+        "assigned_locations_count": 0,
+        "balanced_group_custom_value_deviation": 0,
+        "balanced_group_distance_deviation_m": 0,
+        "balanced_group_duration_deviation_s": 0,
+        "balanced_group_kg_deviation": 0,
+        "balanced_group_penalty": 0,
+        "balanced_group_served_order_count_deviation": 0,
+        "balanced_group_stop_count_deviation": 0,
+        "balanced_group_unit_deviation": 0,
+        "close_location_groups_extra_points": 0,
+        "close_location_groups_extra_vehicles": 0,
+        "close_location_groups_extra_visits": 0,
+        "close_location_groups_penalty": 0,
+        "depot_throughput_violation_kg": 0,
+        "depot_throughput_violation_kg_per_hour": 0,
+        "depot_throughput_violation_units": 0,
+        "depot_throughput_violation_units_per_hour": 0,
+        "depot_throughput_violation_vehicles": 0,
+        "drop_penalty_percentage": 0,
+        "dropped_locations_count": 0,
+        "early_depot_count": 0,
+        "early_locations_count": 0,
+        "early_shifts_count": 0,
+        "empty_runs_penalty": 0,
+        "failed_max_work_duration_count": 0,
+        "failed_min_work_duration_count": 0,
+        "failed_time_window_depot_count": 0,
+        "failed_time_window_depot_count_penalty": 0,
+        "failed_time_window_depot_duration_penalty": 0,
+        "failed_time_window_depot_duration_s": 0,
+        "failed_time_window_depots_total_penalty": 0,
+        "failed_time_window_locations_count": 0,
+        "failed_time_window_locations_count_penalty": 0,
+        "failed_time_window_locations_duration_penalty": 0,
+        "failed_time_window_locations_duration_s": 0,
+        "failed_time_window_locations_total_penalty": 0,
+        "failed_time_window_shifts_count": 0,
+        "failed_time_window_shifts_count_penalty": 0,
+        "failed_time_window_shifts_duration_penalty": 0,
+        "failed_time_window_shifts_duration_s": 0,
+        "failed_time_window_shifts_total_penalty": 0,
+        "failed_work_duration_count": 0,
+        "failed_work_duration_count_penalty": 0,
+        "failed_work_duration_penalty": 0,
+        "failed_work_duration_s": 0,
+        "failed_work_duration_total_penalty": 0,
+        "global_proximity": 0,
+        "intermediate_location_distance_threshold_m": 0,
+        "intermediate_location_duration_threshold_s": 0,
+        "late_depot_count": 0,
+        "late_locations_count": 0,
+        "late_shifts_count": 0,
+        "lateness_risk_locations_count": 0,
+        "max_distance_from_depot_m": 0,
+        "max_distance_to_attraction_point_m": 0,
+        "max_distance_to_garage_m": 0,
+        "max_drop_percentage_penalty": 0,
+        "max_split_orders_percentage_penalty": 0,
+        "max_vehicle_runs": 0,
+        "multiorders_extra_points": 0,
+        "multiorders_extra_vehicles": 0,
+        "multiorders_extra_visits": 0,
+        "new_balanced_group_custom_value_deviation": 0,
+        "new_balanced_group_distance_deviation_m": 0,
+        "new_balanced_group_duration_deviation_s": 0,
+        "new_balanced_group_kg_deviation": 0,
+        "new_balanced_group_penalty": 0,
+        "new_balanced_group_served_order_count_deviation": 0,
+        "new_balanced_group_stop_count_deviation": 0,
+        "new_balanced_group_unit_deviation": 0,
+        "new_global_proximity": 0,
+        "new_objective_minimum": 0,
+        "new_total_cost_with_penalty": 0,
+        "new_total_global_proximity_distance_m": 0,
+        "new_total_global_proximity_duration_s": 0,
+        "new_total_global_proximity_penalty": 0,
+        "new_total_guaranteed_penalty": 0,
+        "new_total_penalty": 0,
+        "new_total_stop_count_penalty": 0,
+        "new_total_stops": 0,
+        "0_of_routes": 0,
+        "objective_minimum": 0,
+        "old_balanced_group_custom_value_deviation": 0,
+        "old_balanced_group_distance_deviation_m": 0,
+        "old_balanced_group_duration_deviation_s": 0,
+        "old_balanced_group_kg_deviation": 0,
+        "old_balanced_group_penalty": 0,
+        "old_balanced_group_served_order_count_deviation": 0,
+        "old_balanced_group_stop_count_deviation": 0,
+        "old_balanced_group_unit_deviation": 0,
+        "old_global_proximity": 0,
+        "old_objective_minimum": 0,
+        "old_total_cost_with_penalty": 0,
+        "old_total_global_proximity_distance_m": 0,
+        "old_total_global_proximity_duration_s": 0,
+        "old_total_global_proximity_penalty": 0,
+        "old_total_guaranteed_penalty": 0,
+        "old_total_penalty": 0,
+        "old_total_stop_count_penalty": 0,
+        "old_total_stops": 0,
+        "operations_per_second": 0,
+        "optimization_steps": 0,
+        "overtime_duration_penalty": 0,
+        "overtime_duration_s": 0,
+        "overtime_penalty": 0,
+        "overtime_shifts_count": 0,
+        "overtime_shifts_count_penalty": 0,
+        "proximity": 0,
+        "route_custom_cost": 0,
+        "route_payout": 0,
+        "run_custom_cost": 0,
+        "run_payout": 0,
+        "shift_custom_cost": 0,
+        "shift_payout": 0,
+        "shift_total_custom_cost": 0,
+        "shift_total_payout": 0,
+        "skip_intermediate_location_penalty": 0,
+        "split_orders_percentage": 0,
+        "total_cost": 0,
+        "total_cost_with_penalty": 0,
+        "total_custom_cost": 0,
+        "total_depot_penalty": 0,
+        "total_drop_penalty": 0,
+        "total_duration_cost": 0,
+        "total_duration_s": 0,
+        "total_early_count": 0,
+        "total_early_duration_s": 0,
+        "total_early_penalty": 0,
+        "total_empty_distance_m": 0,
+        "total_failed_delivery_deadline_count": 0,
+        "total_failed_delivery_deadline_duration_s": 0,
+        "total_failed_delivery_deadline_penalty": 0,
+        "total_failed_time_between_visits_count": 0,
+        "total_failed_time_between_visits_duration_s": 0,
+        "total_failed_time_window_count": 0,
+        "total_failed_time_window_duration_s": 0,
+        "total_failed_time_window_penalty": 0,
+        "total_fails_penalty": 0,
+        "total_fixed_cost": 0,
+        "total_global_proximity_distance_m": 0,
+        "total_global_proximity_duration_s": 0,
+        "total_global_proximity_penalty": 0,
+        "total_guaranteed_penalty": 0,
+        "total_late_count": 0,
+        "total_late_duration_s": 0,
+        "total_late_penalty": 0,
+        "total_lateness_risk_probability": 0,
+        "total_locations_cost": 0,
+        "total_middle_depots": 0,
+        "total_mileage_penalty": 0,
+        "total_min_stop_weight_penalty": 0,
+        "total_multiorders_penalty": 0,
+        "total_non_empty_distance_m": 0,
+        "total_optional_tags_cost": 0,
+        "total_optional_zones_cost": 0,
+        "total_payout": 0,
+        "total_penalty": 0,
+        "total_probable_penalty": 0,
+        "total_proximity_distance_m": 0,
+        "total_proximity_duration_s": 0,
+        "total_proximity_penalty": 0,
+        "total_rest_duration_s": 0,
+        "total_runs_cost": 0,
+        "total_served_orders": 0,
+        "total_service_duration_s": 0,
+        "total_stop_count_penalty": 0,
+        "total_stops": 0,
+        "total_time_between_visits_penalty": 0,
+        "total_trailer_rolling_cost": 0,
+        "total_trailer_rolling_count": 0,
+        "total_trailer_transit_distance_m": 0,
+        "total_trailer_transit_duration_s": 0,
+        "total_transit_distance_cost": 0,
+        "total_transit_distance_m": 0,
+        "total_transit_duration_s": 0,
+        "total_transport_work_cost": 0,
+        "total_transport_work_tonne_km": 0,
+        "total_unfeasibility_count": 0,
+        "total_unfeasibility_penalty": 0,
+        "total_unique_stops": 0,
+        "total_waiting_duration_s": 0,
+        "total_walking_distance_m": 0,
+        "total_walking_duration_s": 0,
+        "total_walking_edge_distance_excess": 0,
+        "total_walking_edge_penalty": 0,
+        "total_work_breaks": 0,
+        "transit_time_penalty": 0,
+        "unfeasible_couple_coupled_trailer_penalty": 0,
+        "unfeasible_crossdock_missed_delivery_penalty": 0,
+        "unfeasible_decouple_decoupled_trailer_penalty": 0,
+        "unfeasible_decouple_unused_trailer_penalty": 0,
+        "unfeasible_depots_only_at_run_beginning_penalty": 0,
+        "unfeasible_empty_first_run_penalty": 0,
+        "unfeasible_failed_dependent_group_penalty": 0,
+        "unfeasible_failed_expiring_time_penalty": 0,
+        "unfeasible_failed_hard_time_window_penalty": 0,
+        "unfeasible_failed_lifo_order_penalty": 0,
+        "unfeasible_failed_ready_time_penalty": 0,
+        "unfeasible_failed_sequence_order_penalty": 0,
+        "unfeasible_failed_solid_group_penalty": 0,
+        "unfeasible_incompatible_load_types_penalty": 0,
+        "unfeasible_incompatible_zones_penalty": 0,
+        "unfeasible_invalid_pickup_delivery_order_penalty": 0,
+        "unfeasible_max_midde_depots_penalty": 0,
+        "unfeasible_missed_coupled_delivery_penalty": 0,
+        "unfeasible_missed_coupled_pickup_from_any_penalty": 0,
+        "unfeasible_missed_coupled_pickup_penalty": 0,
+        "unfeasible_missed_dependent_group_locations_penalty": 0,
+        "unfeasible_missed_planned_runs_penalty": 0,
+        "unfeasible_not_loaded_order_penalty": 0,
+        "unfeasible_not_same_depot_route_ending_penalty": 0,
+        "unfeasible_not_same_depot_run_ending_penalty": 0,
+        "unfeasible_pickup_missed_depot_penalty": 0,
+        "unfeasible_pickup_missed_drop_off_penalty": 0,
+        "unfeasible_planned_overload_penalty": 0,
+        "unfeasible_rolling_before_decoupling_penalty": 0,
+        "unfeasible_rolling_without_trailer_penalty": 0,
+        "unfeasible_shift_overtime_penalty": 0,
+        "unfeasible_trailer_diff_excess_penalty": 0,
+        "unfeasible_transit_time_excess_penalty": 0,
+        "unfeasible_unused_middle_depot_penalty": 0,
+        "unfeasible_use_trailer_prohibited_location_penalty": 0,
+        "unfeasible_vehicle_overload_penalty": 0,
+        "unfeasible_walking_after_route_end_penalty": 0,
+        "unfeasible_walking_courier_overload_penalty": 0,
+        "unfeasible_walking_to_depot_penalty": 0,
+        "unfeasible_work_break_drop_penalty": 0,
+        "used_vehicles": 0
+      },
+      "options": {
+        "absolute_time": false,
+        "avoid_tolls": false,
+        "balanced_groups": [
+          {
+            "id": "string",
+            "penalty": {
+              "custom_value": 0,
+              "hour": 0,
+              "ignore_unused_vehicles": false,
+              "km": 0,
+              "served_order": 0,
+              "stop": 0,
+              "unit": 0,
+              "weight_kg": 0
+            }
+          }
+        ],
+        "close_location_groups_radius_m": 0,
+        "close_locations_during_post_optimization_only": false,
+        "critical_lateness_risk_probability": 0,
+        "date": "string",
+        "enable_vehicle_classes": false,
+        "fix_planned_shifts": false,
+        "global_proximity_factor": 0,
+        "ignore_min_stops_for_unused": false,
+        "ignore_zones": false,
+        "immutable": false,
+        "incompatible_load_types": [
+          "array"
+        ],
+        "incompatible_zones": [
+          "array"
+        ],
+        "load_when_ready": false,
+        "location_groups": [
+          {
+            "dependent": false,
+            "location_ids": [
+              {}
+            ],
+            "solid": false,
+            "title": "string"
+          }
+        ],
+        "matrix_router": "string",
+        "max_distance_to_projection_m": 0,
+        "max_drop_penalty_percentage": 0,
+        "max_split_orders_percentage": 0,
+        "merge_multiorders": false,
+        "minimize_lateness_risk": false,
+        "multiorder_radius_m": 0,
+        "penalize_late_service": false,
+        "penalty": {
+          "close_location_groups": {
+            "per_extra_point": 0,
+            "per_extra_vehicle": 0,
+            "per_extra_visit": 0
+          },
+          "drop_penalty_percentage": {
+            "fixed": 0,
+            "per_percent": 0
+          },
+          "multiorders": {
+            "per_extra_point": 0,
+            "per_extra_vehicle": 0,
+            "per_extra_visit": 0
+          },
+          "split_orders_percentage": {
+            "fixed": 0,
+            "per_percent": 0
+          }
+        },
+        "points_throughputs": [
+          {
+            "penalty": {
+              "throughput": {
+                "fixed": 0,
+                "kg": 0,
+                "unit": 0,
+                "vehicle": 0
+              }
+            },
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "throughput": {}
+          }
+        ],
+        "post_optimization": false,
+        "proximity_factor": 0,
+        "quality": "string",
+        "restart_on_drop": false,
+        "routing_mode": "string",
+        "template_rest_schedules": [
+          {
+            "id": "string"
+          }
+        ],
+        "wait_in_multiorders": false,
+        "weighted_drop_penalty": false
+      },
+      "routes": [
+        {
+          "global_proximity_attraction_point": {
+            "address": "string",
+            "allow_trailers": false,
+            "can_be_merged": false,
+            "can_be_split": false,
+            "comments": "string",
+            "crossdock_mode": "string",
+            "custom_value": 0,
+            "delivery_deadline": "string",
+            "delivery_to_any": [
+              {}
+            ],
+            "depot_expiring_time": "string",
+            "depot_ready_time": "string",
+            "description": "string",
+            "dropped_ratio": 0,
+            "hard_time_window": "string",
+            "hard_window": false,
+            "in_lifo_order": false,
+            "load_types": [
+              "string"
+            ],
+            "max_split_parts": 0,
+            "max_total_vehicles": 0,
+            "may_drop_in_crossdock": false,
+            "optional_tags": [
+              {
+                "tag": "string",
+                "value": 0
+              }
+            ],
+            "parking_service_duration_s": 0,
+            "penalty": {
+              "delivery_deadline": {
+                "fixed": 0,
+                "minute": 0
+              },
+              "early": {
+                "fixed": 0,
+                "minute": 0
+              },
+              "late": {
+                "fixed": 0,
+                "minute": 0
+              },
+              "out_of_time": {
+                "fixed": 0,
+                "minute": 0
+              },
+              "rolling_throughput": {
+                "fixed": 0,
+                "kg": 0,
+                "unit": 0,
+                "vehicle": 0
+              },
+              "throughput": {
+                "fixed": 0,
+                "kg": 0,
+                "unit": 0,
+                "vehicle": 0
+              },
+              "time_between_visits": {
+                "fixed": 0,
+                "minute": 0
+              },
+              "transit_time": {}
+            },
+            "phone": "string",
+            "pickup_from_any": false,
+            "pickup_must_reach_depot": false,
+            "point": {
+              "lat": 0,
+              "lon": 0
+            },
+            "preset_id": "string",
+            "ref": "string",
+            "required_tags": [
+              "string"
+            ],
+            "rolling_throughput": {},
+            "sequence_order": 0,
+            "service_durations": {
+              "parking": 0
+            },
+            "shared_with_company_ids": [
+              0
+            ],
+            "shipment_size": {
+              "custom": {},
+              "units": 0,
+              "volume": {
+                "align": "string",
+                "depth_m": 0,
+                "height_m": 0,
+                "type": "string",
+                "width_m": 0
+              },
+              "volume_cbm": 0,
+              "weight_kg": 0
+            },
+            "split_parts_must_fill_whole_vehicle": false,
+            "throughput": {},
+            "time_window": "string",
+            "time_windows": [
+              {
+                "hard_time_window": "string",
+                "time_window": "string"
+              }
+            ],
+            "title": "string",
+            "transit_time": {
+              "hard_limit_s": 0,
+              "limit_s": 0
+            },
+            "type": "string",
+            "use_in_proximity": false
+          },
+          "metrics": {
+            "arrival_after_start_penalty": 0,
+            "depot_throughput_violation_kg": 0,
+            "depot_throughput_violation_kg_per_hour": 0,
+            "depot_throughput_violation_units": 0,
+            "depot_throughput_violation_units_per_hour": 0,
+            "depot_throughput_violation_vehicles": 0,
+            "dropped_orders_units": 0,
+            "dropped_orders_volume_m3": 0,
+            "dropped_orders_weight_kg": 0,
+            "early_depot_count": 0,
+            "early_locations_count": 0,
+            "early_shifts_count": 0,
+            "empty_runs_penalty": 0,
+            "failed_max_work_duration_count": 0,
+            "failed_min_work_duration_count": 0,
+            "failed_time_window_depot_count": 0,
+            "failed_time_window_depot_count_penalty": 0,
+            "failed_time_window_depot_duration_penalty": 0,
+            "failed_time_window_depot_duration_s": 0,
+            "failed_time_window_depots_total_penalty": 0,
+            "failed_time_window_locations_count": 0,
+            "failed_time_window_locations_count_penalty": 0,
+            "failed_time_window_locations_duration_penalty": 0,
+            "failed_time_window_locations_duration_s": 0,
+            "failed_time_window_locations_total_penalty": 0,
+            "failed_time_window_shifts_count": 0,
+            "failed_time_window_shifts_count_penalty": 0,
+            "failed_time_window_shifts_duration_penalty": 0,
+            "failed_time_window_shifts_duration_s": 0,
+            "failed_time_window_shifts_total_penalty": 0,
+            "failed_work_duration_count": 0,
+            "failed_work_duration_count_penalty": 0,
+            "failed_work_duration_penalty": 0,
+            "failed_work_duration_s": 0,
+            "failed_work_duration_total_penalty": 0,
+            "global_proximity": 0,
+            "late_depot_count": 0,
+            "late_locations_count": 0,
+            "late_shifts_count": 0,
+            "lateness_risk_locations_count": 0,
+            "max_distance_from_depot_m": 0,
+            "max_distance_to_attraction_point_m": 0,
+            "max_distance_to_garage_m": 0,
+            "new_global_proximity": 0,
+            "new_objective_minimum": 0,
+            "new_total_cost_with_penalty": 0,
+            "new_total_global_proximity_distance_m": 0,
+            "new_total_global_proximity_duration_s": 0,
+            "new_total_global_proximity_penalty": 0,
+            "new_total_guaranteed_penalty": 0,
+            "new_total_penalty": 0,
+            "new_total_stop_count_penalty": 0,
+            "new_total_stops": 0,
+            "objective_minimum": 0,
+            "old_global_proximity": 0,
+            "old_objective_minimum": 0,
+            "old_total_cost_with_penalty": 0,
+            "old_total_global_proximity_distance_m": 0,
+            "old_total_global_proximity_duration_s": 0,
+            "old_total_global_proximity_penalty": 0,
+            "old_total_guaranteed_penalty": 0,
+            "old_total_penalty": 0,
+            "old_total_stop_count_penalty": 0,
+            "old_total_stops": 0,
+            "overtime_duration_penalty": 0,
+            "overtime_duration_s": 0,
+            "overtime_penalty": 0,
+            "overtime_shifts_count": 0,
+            "overtime_shifts_count_penalty": 0,
+            "proximity": 0,
+            "route_custom_cost": 0,
+            "route_payout": 0,
+            "run_custom_cost": 0,
+            "run_payout": 0,
+            "shift_custom_cost": 0,
+            "shift_payout": 0,
+            "shift_total_custom_cost": 0,
+            "shift_total_payout": 0,
+            "total_cost": 0,
+            "total_cost_with_penalty": 0,
+            "total_custom_cost": 0,
+            "total_depot_penalty": 0,
+            "total_drop_penalty": 0,
+            "total_duration_cost": 0,
+            "total_duration_s": 0,
+            "total_early_count": 0,
+            "total_early_duration_s": 0,
+            "total_early_penalty": 0,
+            "total_empty_distance_m": 0,
+            "total_failed_delivery_deadline_count": 0,
+            "total_failed_delivery_deadline_duration_s": 0,
+            "total_failed_delivery_deadline_penalty": 0,
+            "total_failed_time_window_count": 0,
+            "total_failed_time_window_duration_s": 0,
+            "total_failed_time_window_penalty": 0,
+            "total_fails_penalty": 0,
+            "total_fixed_cost": 0,
+            "total_global_proximity_distance_m": 0,
+            "total_global_proximity_duration_s": 0,
+            "total_global_proximity_penalty": 0,
+            "total_guaranteed_penalty": 0,
+            "total_late_count": 0,
+            "total_late_duration_s": 0,
+            "total_late_penalty": 0,
+            "total_lateness_risk_probability": 0,
+            "total_locations_cost": 0,
+            "total_middle_depots": 0,
+            "total_mileage_penalty": 0,
+            "total_min_stop_weight_penalty": 0,
+            "total_multiorders_penalty": 0,
+            "total_non_empty_distance_m": 0,
+            "total_optional_tags_cost": 0,
+            "total_optional_zones_cost": 0,
+            "total_payout": 0,
+            "total_penalty": 0,
+            "total_probable_penalty": 0,
+            "total_proximity_distance_m": 0,
+            "total_proximity_duration_s": 0,
+            "total_proximity_penalty": 0,
+            "total_rest_duration_s": 0,
+            "total_runs_cost": 0,
+            "total_served_orders": 0,
+            "total_service_duration_s": 0,
+            "total_stop_count_penalty": 0,
+            "total_stops": 0,
+            "total_trailer_rolling_cost": 0,
+            "total_trailer_rolling_count": 0,
+            "total_trailer_transit_distance_m": 0,
+            "total_trailer_transit_duration_s": 0,
+            "total_transit_distance_cost": 0,
+            "total_transit_distance_m": 0,
+            "total_transit_duration_s": 0,
+            "total_transport_work_cost": 0,
+            "total_transport_work_tonne_km": 0,
+            "total_unfeasibility_count": 0,
+            "total_unfeasibility_penalty": 0,
+            "total_unique_stops": 0,
+            "total_units": 0,
+            "total_volume_m3": 0,
+            "total_waiting_duration_s": 0,
+            "total_walking_distance_m": 0,
+            "total_walking_duration_s": 0,
+            "total_walking_edge_distance_excess": 0,
+            "total_walking_edge_penalty": 0,
+            "total_weight_kg": 0,
+            "total_work_breaks": 0,
+            "transit_time_penalty": 0,
+            "unfeasible_couple_coupled_trailer_penalty": 0,
+            "unfeasible_crossdock_missed_delivery_penalty": 0,
+            "unfeasible_decouple_decoupled_trailer_penalty": 0,
+            "unfeasible_decouple_unused_trailer_penalty": 0,
+            "unfeasible_depots_only_at_run_beginning_penalty": 0,
+            "unfeasible_empty_first_run_penalty": 0,
+            "unfeasible_failed_dependent_group_penalty": 0,
+            "unfeasible_failed_expiring_time_penalty": 0,
+            "unfeasible_failed_hard_time_window_penalty": 0,
+            "unfeasible_failed_lifo_order_penalty": 0,
+            "unfeasible_failed_ready_time_penalty": 0,
+            "unfeasible_failed_sequence_order_penalty": 0,
+            "unfeasible_failed_solid_group_penalty": 0,
+            "unfeasible_incompatible_load_types_penalty": 0,
+            "unfeasible_incompatible_zones_penalty": 0,
+            "unfeasible_invalid_pickup_delivery_order_penalty": 0,
+            "unfeasible_max_midde_depots_penalty": 0,
+            "unfeasible_missed_coupled_delivery_penalty": 0,
+            "unfeasible_missed_coupled_pickup_from_any_penalty": 0,
+            "unfeasible_missed_coupled_pickup_penalty": 0,
+            "unfeasible_missed_dependent_group_locations_penalty": 0,
+            "unfeasible_missed_planned_runs_penalty": 0,
+            "unfeasible_not_loaded_order_penalty": 0,
+            "unfeasible_not_same_depot_route_ending_penalty": 0,
+            "unfeasible_not_same_depot_run_ending_penalty": 0,
+            "unfeasible_pickup_missed_depot_penalty": 0,
+            "unfeasible_pickup_missed_drop_off_penalty": 0,
+            "unfeasible_planned_overload_penalty": 0,
+            "unfeasible_rolling_before_decoupling_penalty": 0,
+            "unfeasible_rolling_without_trailer_penalty": 0,
+            "unfeasible_shift_overtime_penalty": 0,
+            "unfeasible_trailer_diff_excess_penalty": 0,
+            "unfeasible_transit_time_excess_penalty": 0,
+            "unfeasible_unused_middle_depot_penalty": 0,
+            "unfeasible_use_trailer_prohibited_location_penalty": 0,
+            "unfeasible_vehicle_overload_penalty": 0,
+            "unfeasible_walking_after_route_end_penalty": 0,
+            "unfeasible_walking_courier_overload_penalty": 0,
+            "unfeasible_walking_to_depot_penalty": 0,
+            "unfeasible_work_break_drop_penalty": 0,
+            "utilization_units": 0,
+            "utilization_units_perc": 0,
+            "utilization_volume_m3": 0,
+            "utilization_volume_perc": 0,
+            "utilization_weight_kg": 0,
+            "utilization_weight_perc": 0
+          },
+          "route": [
+            {
+              "actual_arrival_time_s": 0,
+              "actual_departure_time_s": 0,
+              "actual_service_start_time_s": 0,
+              "actual_waiting_duration_s": 0,
+              "arrival_time_s": 0,
+              "departure_time_s": 0,
+              "failed_time_window": {
+                "duration_s": 0,
+                "how": "string"
+              },
+              "load_to_head": [
+                {}
+              ],
+              "load_to_trailer": [
+                {}
+              ],
+              "multi_order": false,
+              "node": {
+                "type": "string",
+                "used_hard_time_window": "string",
+                "used_projection": {
+                  "lat": 0,
+                  "lon": 0
+                },
+                "used_time_window": "string",
+                "value": {
+                  "location_id": "string",
+                  "passed_time_s": 0
+                }
+              },
+              "overtime": {
+                "duration_s": 0
+              },
+              "probably_failed_time_window": {
+                "duration_s": 0,
+                "high_risk": false,
+                "how": "string",
+                "probability": 0
+              },
+              "stop_sequence_0": 0,
+              "transit_distance_m": 0,
+              "transit_duration_s": 0,
+              "violations": [
+                {
+                  "high_risk": false,
+                  "probability": 0,
+                  "type": "string"
+                }
+              ],
+              "waiting_duration_s": 0
+            }
+          ],
+          "run_0": 0,
+          "shift": {
+            "balanced_group_id": "string",
+            "end": {
+              "actual_arrival_time_s": 0,
+              "actual_departure_time_s": 0,
+              "actual_service_start_time_s": 0,
+              "actual_waiting_duration_s": 0,
+              "arrival_time_s": 0,
+              "departure_time_s": 0,
+              "failed_time_window": {
+                "duration_s": 0,
+                "how": "string"
+              },
+              "load_to_head": [
+                {}
+              ],
+              "load_to_trailer": [
+                {}
+              ],
+              "multi_order": false,
+              "node": {
+                "type": "string",
+                "used_hard_time_window": "string",
+                "used_projection": {
+                  "lat": 0,
+                  "lon": 0
+                },
+                "used_time_window": "string",
+                "value": {
+                  "location_id": "string",
+                  "passed_time_s": 0
+                }
+              },
+              "overtime": {
+                "duration_s": 0
+              },
+              "probably_failed_time_window": {
+                "duration_s": 0,
+                "high_risk": false,
+                "how": "string",
+                "probability": 0
+              },
+              "stop_sequence_0": 0,
+              "transit_distance_m": 0,
+              "transit_duration_s": 0,
+              "violations": [
+                {
+                  "high_risk": false,
+                  "probability": 0,
+                  "type": "string"
+                }
+              ],
+              "waiting_duration_s": 0
+            },
+            "id": "string",
+            "start": {
+              "actual_arrival_time_s": 0,
+              "actual_departure_time_s": 0,
+              "actual_service_start_time_s": 0,
+              "actual_waiting_duration_s": 0,
+              "arrival_time_s": 0,
+              "departure_time_s": 0,
+              "failed_time_window": {
+                "duration_s": 0,
+                "how": "string"
+              },
+              "load_to_head": [
+                {}
+              ],
+              "load_to_trailer": [
+                {}
+              ],
+              "multi_order": false,
+              "node": {
+                "type": "string",
+                "used_hard_time_window": "string",
+                "used_projection": {
+                  "lat": 0,
+                  "lon": 0
+                },
+                "used_time_window": "string",
+                "value": {
+                  "location_id": "string",
+                  "passed_time_s": 0
+                }
+              },
+              "overtime": {
+                "duration_s": 0
+              },
+              "probably_failed_time_window": {
+                "duration_s": 0,
+                "high_risk": false,
+                "how": "string",
+                "probability": 0
+              },
+              "stop_sequence_0": 0,
+              "transit_distance_m": 0,
+              "transit_duration_s": 0,
+              "violations": [
+                {
+                  "high_risk": false,
+                  "probability": 0,
+                  "type": "string"
+                }
+              ],
+              "waiting_duration_s": 0
+            }
+          }
+        }
+      ],
+      "solver_status": "string",
+      "vehicles": [
+        {
+          "allow_different_depots_in_route": false,
+          "allowed_zones": [
+            "string"
+          ],
+          "can_change_depot_between_runs": false,
+          "capacity": {
+            "custom": {},
+            "limits": {
+              "units_perc": 0,
+              "volume_perc": 0,
+              "weight_perc": 0
+            },
+            "units": 0,
+            "volume": {
+              "depth_m": 0,
+              "height_m": 0,
+              "width_m": 0
+            },
+            "volume_cbm": 0,
+            "weight_kg": 0
+          },
+          "close_locations": [
+            {
+              "distance_till_service_m": {
+                "penalty": 0,
+                "value": 0
+              },
+              "duration_till_service_s": {
+                "penalty": 0,
+                "value": 0
+              },
+              "routing_mode": "string",
+              "search_radius_m": 0,
+              "soft_search_radius_m": 0
+            }
+          ],
+          "crossdock_mode": "string",
+          "depot_extra_service_duration_s": 0,
+          "depots_only_at_run_beginning": false,
+          "excluded_tags": [
+            "string"
+          ],
+          "finish_route_in_starting_depot": false,
+          "finish_run_in_starting_depot": false,
+          "first_edges_penalty_factor": 0,
+          "fixed_planned_route": false,
+          "fixed_work_breaks": [
+            {
+              "shift_id": "string",
+              "work_duration_s": 0
+            }
+          ],
+          "forbidden_zones": [
+            "string"
+          ],
+          "imei": 0,
+          "immutable": false,
+          "incompatible_load_types": [
+            "array"
+          ],
+          "incompatible_zones": [
+            "array"
+          ],
+          "last_edges_penalty_factor": 0,
+          "max_middle_depots": 0,
+          "max_runs": 0,
+          "min_stop_weight": 0,
+          "onboard_incompatible_load_types": false,
+          "optional_zones": [
+            {
+              "value": 0,
+              "zone": "string"
+            }
+          ],
+          "penalty": {
+            "arrival_after_start": {
+              "as_soon_as_possible": false,
+              "average_h": 0
+            },
+            "empty_runs": {
+              "fixed": 0,
+              "per_run": 0
+            },
+            "min_stop_weight": {
+              "fixed": 0,
+              "kg": 0
+            }
+          },
+          "phone": "string",
+          "planned_route": {
+            "locations": [
+              {
+                "anchor_mode": "string",
+                "delivered_orders": [
+                  {}
+                ],
+                "delivery_in_current_run": false,
+                "is_middle_depot": false,
+                "loaded_orders": [
+                  {}
+                ],
+                "order_ratio": 0,
+                "parking_mode": "string",
+                "picked_orders": [
+                  {}
+                ],
+                "shift_id": "string",
+                "wait_if_early": false
+              }
+            ],
+            "planned_runs_first": false,
+            "work_breaks": [
+              {
+                "shift_id": "string",
+                "work_duration_s": 0
+              }
+            ]
+          },
+          "preset_id": "string",
+          "ref": "string",
+          "rest_schedule": {},
+          "rest_schedule_id": "string",
+          "return_to_depot": false,
+          "routing_mode": "string",
+          "service_duration_multiplier": 0,
+          "shared_service_duration_multiplier": 0,
+          "shifts": [
+            {
+              "balanced_group_id": "string",
+              "hard_max_duration_s": 0,
+              "hard_time_window": "string",
+              "hard_window": false,
+              "id": "string",
+              "immutable": false,
+              "max_duration_s": 0,
+              "max_mileage_km": 0,
+              "max_runs": 0,
+              "maximal_stops": 0,
+              "minimal_stops": 0,
+              "minimal_unique_stops": 0,
+              "penalty": {
+                "early": {
+                  "fixed": 0,
+                  "minute": 0
+                },
+                "late": {
+                  "fixed": 0,
+                  "minute": 0
+                },
+                "max_mileage": {
+                  "fixed": 0,
+                  "km": 0
+                },
+                "out_of_time": {
+                  "fixed": 0,
+                  "minute": 0
+                },
+                "stop_excess": {
+                  "fixed": 0,
+                  "per_stop": 0
+                },
+                "stop_lack": {
+                  "fixed": 0,
+                  "per_stop": 0
+                },
+                "unique_stop_lack": {
+                  "fixed": 0,
+                  "per_stop": 0
+                }
+              },
+              "preset_id": "string",
+              "service_duration_s": 0,
+              "time_window": "string"
+            }
+          ],
+          "specs": {
+            "height": 0,
+            "length": 0,
+            "max_weight": 0,
+            "max_weight_kg": 0,
+            "width": 0
+          },
+          "tags": [
+            "string"
+          ],
+          "trailer": {
+            "capacity": {
+              "custom": {},
+              "limits": {
+                "units_perc": 0,
+                "volume_perc": 0,
+                "weight_perc": 0
+              },
+              "units": 0,
+              "volume": {
+                "depth_m": 0,
+                "height_m": 0,
+                "width_m": 0
+              },
+              "volume_cbm": 0,
+              "weight_kg": 0
+            },
+            "cost": {
+              "fixed": 0,
+              "hour": 0,
+              "km": 0,
+              "location": 0,
+              "run": 0,
+              "tonne_km": 0,
+              "waiting_hour": 0
+            },
+            "coupling_time_s": 0,
+            "decoupling_time_s": 0,
+            "max_capacity_difference": {
+              "custom": {},
+              "units": 0,
+              "volume_cbm": 0,
+              "weight_kg": 0
+            },
+            "rolling_cost": 0,
+            "rolling_time": {
+              "fixed_time_s": 0,
+              "s_per_kg": 0,
+              "s_per_m3": 0,
+              "s_per_unit": 0
+            }
+          },
+          "travel_time_multiplier": 0,
+          "visit_depot_at_start": false,
+          "visited_locations": [
+            {
+              "delivered_orders": [
+                {}
+              ],
+              "order_ratio": 0,
+              "shift_id": "string",
+              "time": "string",
+              "wait_if_early": false
+            }
+          ],
+          "walking_courier": {
+            "capacity": {
+              "units": 0
+            },
+            "cost": {
+              "hour": 0,
+              "km": 0
+            },
+            "restrictions": {
+              "max_parking_duration_s": {
+                "penalty": 0,
+                "value": 0
+              },
+              "max_parking_walking_distance_m": {
+                "penalty": 0,
+                "value": 0
+              },
+              "max_walking_edge_distance_m": {
+                "penalty": 0,
+                "value": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "status": {
+      "cancelled": 0,
+      "completed": 0,
+      "estimate": 0,
+      "queued": 0,
+      "started": 0
+    }
+  }
+  

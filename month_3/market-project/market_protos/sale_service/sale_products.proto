@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package sale_service;
+option go_package = "genproto/sale_service";
+import "sale.proto";
+
+service SaleProductService {
+    rpc Create(CreateSaleProductRequest) returns (CreateSaleProductResponse) {}
+    rpc Get(IdRequest) returns (GetSaleProductResponse) {}
+    rpc List(ListSaleProductRequest) returns (ListSaleProductResponse) {}
+    rpc Update(UpdateSaleProductRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateSaleProductRequest {
+    string sale_id = 1;
+    string product_id = 2;
+    int32 quantity = 3;
+    float price = 4;
+}
+
+message SaleProduct {
+    string id = 1;
+    string sale_id = 2;
+    string product_id = 3;
+    int32 quantity = 4;
+    float price = 5;
+    string created_at = 6;
+    string updated_at = 7;
+    string deleted_at = 8;
+}
+
+message CreateSaleProductResponse {
+    string id = 1;
+}
+
+message GetSaleProductResponse { 
+    SaleProduct SaleProduct = 1;
+}
+
+message UpdateSaleProductRequest {
+    string id = 1;
+    string sale_id = 2;
+    string product_id = 3;
+    int32 quantity = 4;
+    float price = 5;
+}
+
+message ListSaleProductRequest {
+    int32 limit = 1;
+    int32 page = 2;
+}
+
+message ListSaleProductResponse {
+     repeated SaleProduct SaleProducts = 1;
+     int32 count = 2;
+}

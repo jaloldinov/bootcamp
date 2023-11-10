@@ -1,0 +1,303 @@
+definitions:
+  branch_service.Branch:
+    properties:
+      address:
+        type: string
+      created_at:
+        type: string
+      founded_at:
+        type: integer
+      id:
+        type: string
+      name:
+        type: string
+      updated_at:
+        type: string
+      year:
+        type: integer
+    type: object
+  branch_service.CreateBranchRequest:
+    properties:
+      address:
+        type: string
+      founded_at:
+        type: integer
+      name:
+        type: string
+    type: object
+  branch_service.GetBranchResponse:
+    properties:
+      branch:
+        $ref: '#/definitions/branch_service.Branch'
+    type: object
+  branch_service.ListBranchResponse:
+    properties:
+      branches:
+        items:
+          $ref: '#/definitions/branch_service.Branch'
+        type: array
+      count:
+        type: integer
+    type: object
+  models.ResponseModel:
+    properties:
+      code:
+        type: integer
+      data: {}
+      error: {}
+      message:
+        type: string
+    type: object
+  models.Status:
+    properties:
+      status:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/branch/create:
+    post:
+      consumes:
+      - application/json
+      description: create branch
+      operationId: create-branch
+      parameters:
+      - description: branch
+        in: body
+        name: branch
+        required: true
+        schema:
+          $ref: '#/definitions/branch_service.CreateBranchRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: desc
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                data:
+                  $ref: '#/definitions/branch_service.Branch'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+        "500":
+          description: Server Error
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: create branch
+      tags:
+      - branch
+  /v1/branch/delete/{branch_id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete Branch
+      operationId: delete-branch
+      parameters:
+      - description: branch_id
+        in: path
+        name: branch_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: desc
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                data:
+                  $ref: '#/definitions/models.Status'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+        "500":
+          description: Server Error
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: delete branch
+      tags:
+      - branch
+  /v1/branch/get/{branch_id}:
+    get:
+      consumes:
+      - application/json
+      description: get branch
+      operationId: get-branch-byID
+      parameters:
+      - description: branch_id
+        in: path
+        name: branch_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: desc
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                data:
+                  $ref: '#/definitions/branch_service.GetBranchResponse'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+        "500":
+          description: Server Error
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: get branch by ID
+      tags:
+      - branch
+  /v1/branch/list:
+    get:
+      consumes:
+      - application/json
+      description: get branch
+      operationId: get-branch
+      parameters:
+      - description: search
+        in: query
+        name: search
+        type: string
+      - description: limit
+        in: query
+        name: limit
+        type: integer
+      - description: offset
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: desc
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                data:
+                  $ref: '#/definitions/branch_service.ListBranchResponse'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+        "500":
+          description: Server Error
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: get branch all
+      tags:
+      - branch
+  /v1/branch/update/{branch_id}:
+    put:
+      consumes:
+      - application/json
+      description: Update Branch by ID
+      operationId: update_branch
+      parameters:
+      - description: Branch ID to update
+        in: path
+        name: branch_id
+        required: true
+        type: string
+      - description: branch
+        in: body
+        name: branch
+        required: true
+        schema:
+          $ref: '#/definitions/branch_service.CreateBranchRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: desc
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                data:
+                  $ref: '#/definitions/models.Status'
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+        "500":
+          description: Server Error
+          schema:
+            allOf:
+            - $ref: '#/definitions/models.ResponseModel'
+            - properties:
+                error:
+                  type: string
+              type: object
+      summary: Update Branch
+      tags:
+      - branch
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sale;
+option go_package = "genproto/sale_service";
+import "branch.proto";
+
+service StaffService {
+  rpc Create (CreateStaff) returns (CreateResponse) {}
+}
+
+message CreateStaff {
+  string name = 1;
+  string address=2;
+}
+message Staff {
+  string id=1;
+  string name = 2;
+  string address=3;
+}

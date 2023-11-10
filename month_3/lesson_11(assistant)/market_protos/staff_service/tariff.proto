@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package staff_service;
+option go_package = "genproto/staff_service";
+import "staff.proto";
+
+service TariffService {
+    rpc Create(CreateTariffRequest) returns (CreateTariffResponse) {}
+    rpc Get(IdRequest) returns (GetTariffResponse) {}
+    rpc List(ListTariffRequest) returns (ListTariffResponse) {}
+    rpc Update(UpdateTariffRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateTariffRequest {
+    string name = 1;
+    string tariff_type = 2;
+    double amount_for_cash = 3;
+    double amount_for_card = 4;
+}
+
+message Tariff {
+    string id = 1;
+    string name = 2;
+    string tariff_type = 3;
+    double amount_for_cash = 4;
+    double amount_for_card = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message CreateTariffResponse {
+    string id = 1;
+}
+
+message GetTariffResponse { 
+    Tariff Tariff = 1;
+}
+
+message UpdateTariffRequest {
+    string id = 1;
+    string name = 2;
+    string tariff_type = 3;
+    double amount_for_cash = 4;
+    double amount_for_card = 5;
+}
+
+message ListTariffRequest {
+    int32 limit = 1;
+    int32 offset = 2;
+    string search = 3;
+}
+
+message ListTariffResponse {
+     repeated Tariff Tariffs = 1;
+     int32 count = 2;
+}

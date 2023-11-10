@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+import "order.proto";
+
+service DeliveryTariffService {
+    rpc Create(CreateDeliveryTariffRequest) returns (Response) {}
+    rpc Get(IdRequest) returns (DeliveryTariff) {}
+    rpc List(ListDeliveryTariffRequest) returns (ListDeliveryTariffResponse) {}
+    rpc Update(UpdateDeliveryTariffRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateDeliveryTariffRequest {
+    string name = 1;
+    string tariff_type = 2; //  'fixed', 'alternative'
+    double base_price = 3; 
+    DeliveryTariffValues Values = 4;
+}
+
+message DeliveryTariff {
+    int32 id = 1;
+    string name = 2;
+    string tariff_type = 3; //  'fixed', 'alternative'
+    double base_price = 4; 
+    DeliveryTariffValues Values = 5;
+    string created_at = 6;
+    string updated_at = 7;
+}
+
+message UpdateDeliveryTariffRequest {
+    int32 id = 1;
+    string name = 2;
+    string tariff_type = 3; //  'fixed', 'alternative'
+    double base_price = 4; 
+    DeliveryTariffValues Values = 5;
+
+}
+
+message ListDeliveryTariffRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string search = 3;
+    string tarif_type = 4;
+}
+
+message ListDeliveryTariffResponse {
+     repeated DeliveryTariff DeliveryTariffs = 1;
+     int32 count = 2;
+}
+
+message DeliveryTariffValues {
+    double from_price = 2;
+    double to_price = 3;
+    double price = 4;
+}
+
+

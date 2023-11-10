@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package order_service;
+option go_package = "genproto/order_service";
+
+
+service OrderProductService {
+    rpc Create(OrderProductCreateReq) returns (OrderProductCreateResp) {}
+    rpc GetList(OrderProductGetListReq) returns (OrderProductGetListResp) {}
+    rpc GetById(OrderProductIdReq) returns (OrderProduct) {}
+    rpc Update(OrderProductUpdateReq) returns (OrderProductUpdateResp) {}
+    rpc Delete(OrderProductIdReq) returns (OrderProductDeleteResp) {}
+}
+
+
+message OrderProduct {
+    int64 order_id = 1;
+    int64 product_id = 2;
+    int64 quantity = 3;
+    float price = 4;
+}
+
+message OrderProductCreateReq {
+    int64 order_id = 1;
+    int64 product_id = 2;
+    int64 quantity = 3;
+    float price = 4;
+}
+
+message OrderProductCreateResp {
+    string msg = 1;
+}
+
+message OrderProductGetListReq {
+    int64 page = 1;
+    int64 limit = 2;
+    string order_id = 3;
+}
+
+message OrderProductGetListResp {
+    repeated OrderProduct products = 1;
+    int64 count = 2;
+}
+
+message OrderProductIdReq {
+    int64 order_id = 1;
+    int64 product_id = 2;
+}
+
+message OrderProductUpdateReq {
+    int64 order_id = 1;
+    int64 product_id = 2;
+    int64 quantity = 3;
+}
+
+message OrderProductUpdateResp {
+    string msg = 1;
+}
+
+message OrderProductDeleteResp {
+    string msg = 1;
+}

@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package sale_service;
+option go_package = "genproto/sale_service";
+
+service BranchService {
+    rpc Create(CreateBranchRequest) returns (CreateBranchResponse) {}
+    rpc Get(IdRequest) returns (GetBranchResponse) {}
+    rpc List(ListBranchRequest) returns (ListBranchResponse) {}
+    rpc Update(UpdateBranchRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateBranchRequest { 
+    string name = 1;
+    string address = 2;
+    int32 founded_at = 3;
+}
+
+message Branch { 
+    string id = 1;
+    string name = 2;
+    string address = 3;
+    int32 founded_at = 4;
+    int32 year = 5;
+    string created_at = 6;
+    string updated_at = 7;
+    // string deleted_at = 8;
+}
+
+message CreateBranchResponse {
+    string id = 1;
+}
+
+message GetBranchResponse { 
+    Branch branch = 1;
+}
+
+message UpdateBranchRequest {
+    string id = 1;
+    string name = 2;
+    string address = 3;
+    int32 founded_at = 4;
+}
+
+message Response {
+    string message = 1;
+}
+
+message IdRequest {
+    string id = 1;
+}
+
+message ListBranchRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string search = 3;
+}
+
+message ListBranchResponse {
+     repeated Branch branches = 1;
+     int32 count = 2;
+}
+

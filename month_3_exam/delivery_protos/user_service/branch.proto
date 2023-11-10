@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "genproto/user_service";
+
+service BranchService {
+    rpc Create(CreateBranchRequest) returns (Response) {}
+    rpc Get(IdRequest) returns (Branch) {}
+    rpc List(ListBranchRequest) returns (ListBranchResponse) {}
+    rpc Update(UpdateBranchRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+
+    rpc ListActive(ListBranchActiveRequest) returns (ListBranchResponse) {}
+
+}
+
+message CreateBranchRequest {
+    string name = 1;
+    string photo = 2;
+    string phone = 3;
+    int32 delivery_tarif_id = 4;
+    string work_hour_start = 5;
+    string work_hour_end = 6;
+    string address = 7;
+    string destination =8;
+}
+
+message Branch {
+    int32 id = 1;
+    string name = 2;
+    string phone = 3;
+    string photo = 4;
+    int32 delivery_tarif_id = 5;
+    string work_hour_start = 6;
+    string work_hour_end = 7;
+    string address = 8;
+    string destination =9;
+    bool active = 10;
+    string created_at = 11;
+    string updated_at = 12;
+}
+
+message UpdateBranchRequest {
+    int32 id = 1;
+    string name = 2;
+    string phone = 3;
+    string photo = 4;
+    int32 delivery_tarif_id = 5;
+    string work_hour_start = 6;
+    string work_hour_end = 7;
+    string address = 8;
+    string destination = 9;
+}
+
+message ListBranchRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string name = 3;
+    string created_at_from = 4;
+    string created_at_to = 5;
+}
+
+message ListBranchActiveRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string time = 3;
+}
+
+message ListBranchResponse {
+     repeated Branch branches = 1;
+     int32 count = 2;
+}
+
+message Response {
+    string message = 1;
+}
+
+message IdRequest {
+    string id = 1;
+}

@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "genproto/user_service";
+import "branch.proto";
+
+service CourierService {
+    rpc Create(CreateCouriersRequest) returns (Response) {}
+    rpc Get(IdRequest) returns (Couriers) {}
+    rpc List(ListCouriersRequest) returns (ListCouriersResponse) {}
+    rpc Update(UpdateCouriersRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+
+    rpc GetByLogin(IdRequest) returns (Couriers) {}
+}
+
+message CreateCouriersRequest {
+    string firstname = 1;
+    string lastname = 2;
+    int32 branch_id = 3;
+    string phone = 4;
+    string login = 5;
+    string password = 6;
+    int32 max_order_count = 7;
+}
+
+message Couriers {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    int32 branch_id = 4;
+    string phone = 5;
+    bool active = 6;
+    string login = 7;
+    string password = 8;
+    int32 max_order_count =9 ;
+    string created_at = 10;
+    string updated_at = 11;
+}
+
+message UpdateCouriersRequest {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    int32 branch_id = 4;
+    string phone = 5;
+    string login = 6;
+    string password = 7;
+    int32 max_order_count = 8;
+}
+
+message ListCouriersRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string firstname = 3;
+    string lastname = 4;
+    string phone = 5;
+    string created_at_from = 6;
+    string created_at_to = 7;
+}
+
+message ListCouriersResponse {
+     repeated Couriers couriers = 1;
+     int32 count = 2;
+}
+

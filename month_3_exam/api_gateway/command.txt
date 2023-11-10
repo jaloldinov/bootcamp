@@ -1,0 +1,36 @@
+                                        =========================catalog_service=============================
+protoc -I=../delivery_protos/catalog_service --go_out=genproto/catalog_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/catalog_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/catalog_service/category.proto
+
+protoc -I=../delivery_protos/catalog_service --go_out=genproto/catalog_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/catalog_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/catalog_service/products.proto                                        
+
+
+                                          =========================order_service=============================
+protoc -I=../delivery_protos/order_service --go_out=genproto/order_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/order_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/order_service/delivery_tariff.proto
+
+protoc -I=../delivery_protos/order_service --go_out=genproto/order_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/order_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/order_service/order.proto    
+
+
+                                            =========================user=============================
+protoc -I=../delivery_protos/user_service --go_out=genproto/user_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/user_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/user_service/users.proto
+
+protoc -I=../delivery_protos/user_service --go_out=genproto/user_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/user_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/user_service/branch.proto                                        
+
+protoc -I=../delivery_protos/user_service --go_out=genproto/user_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/user_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/user_service/clients.proto
+
+protoc -I=../delivery_protos/user_service --go_out=genproto/user_service --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto/user_service --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/user_service/couriers.proto                                        

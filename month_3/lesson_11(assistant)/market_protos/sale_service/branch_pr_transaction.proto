@@ -1,0 +1,4 @@
+syntax = "proto3";
+
+package sale_service;
+option go_package = "genproto/sale_service";

@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "genproto/user_service";
+import "branch.proto";
+
+service UserService {
+    rpc Create(CreateUsersRequest) returns (Response) {}
+    rpc Get(IdRequest) returns (Users) {}
+    rpc List(ListUsersRequest) returns (ListUsersResponse) {}
+    rpc Update(UpdateUsersRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+
+    rpc GetByLogin(IdRequest) returns (Users) {}
+}
+
+message CreateUsersRequest {
+    string firstname = 1;
+    string lastname = 2;
+    int32 branch_id = 3;
+    string phone = 4;
+    string login = 5;
+    string password = 6;
+}
+
+message Users {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    int32 branch_id = 4;
+    string phone = 5;
+    bool active = 6;
+    string login = 7;
+    string password = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message UpdateUsersRequest {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    int32 branch_id = 4;
+    string phone = 5;
+    string login = 6;
+    string password = 7;
+}
+
+message ListUsersRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string firstname = 3;
+    string lastname = 4;
+    string phone = 5;
+    string created_at_from = 6;
+    string created_at_to = 7;
+}
+
+message ListUsersResponse {
+     repeated Users users = 1;
+     int32 count = 2;
+}
+

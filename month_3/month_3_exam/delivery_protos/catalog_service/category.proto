@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package catalog_service;
+option go_package = "genproto/catalog_service";
+
+service CategoryService {
+    rpc Create(CreateCategoryRequest) returns (Response) {}
+    rpc Get(IdRequest) returns (Category) {}
+    rpc List(ListCategoryRequest) returns (ListCategoryResponse) {}
+    rpc Update(UpdateCategoryRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateCategoryRequest {
+    string title = 1;
+    string image = 2;
+    int32 parent_id = 4;
+    int32 order_number = 5;
+}
+
+message Category {
+    int32 id = 1;
+    string title = 2;
+    string image = 3;
+    bool active = 4;
+    int32 parent_id = 5;
+    int32 order_number = 6;
+    string created_at = 7;
+    string updated_at = 8;
+}
+
+message UpdateCategoryRequest {
+    int32 id = 1;
+    string title = 2;
+    string image = 3;
+    int32 parent_id = 5;
+    string order_number = 6;
+}
+
+message ListCategoryRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string search = 4;
+}
+
+message ListCategoryResponse {
+     repeated Category categories = 1;
+     int32 count = 2;
+}
+
+message Response {
+    string message = 1;
+}
+
+message IdRequest {
+    string id = 1;
+}

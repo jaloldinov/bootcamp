@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package sale;
+option go_package = "genproto/sale_service";
+
+service StreamService {
+  // server-side streaming
+  rpc Count(Request) returns (stream Response) {}
+  // client-side streaming
+  rpc Sum(stream Request) returns (Response) {}
+  // bidirectional stream
+  rpc Sqr(stream Request) returns (stream Response) {}
+
+  // fibonacci bidirectional stream
+  rpc Fibonacci(Request) returns (stream Response) {}
+
+  // translate bidirectional stream
+  rpc Translate(stream RequestWords) returns (stream RespondWords) {}
+}
+
+message Request{
+    int32 number=1;
+}
+
+message RequestWords {
+  string word =1;
+}
+
+message RespondWords {
+  string word =1;
+}
+
+message Response{
+    int32 count=1;
+}

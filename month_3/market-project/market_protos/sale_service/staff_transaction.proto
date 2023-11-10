@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package sale_service;
+option go_package = "genproto/sale_service";
+import "sale.proto";
+
+service StaffTransactionService {
+    rpc Create(CreateStaffTransactionRequest) returns (CreateStaffTransactionResponse) {}
+    rpc Get(IdRequest) returns (GetStaffTransactionResponse) {}
+    rpc List(ListStaffTransactionRequest) returns (ListStaffTransactionResponse) {}
+    rpc Update(UpdateStaffTransactionRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+  
+message CreateStaffTransactionRequest {
+    string sale_id = 1;
+    string staff_id = 2;
+    string tr_type = 3;
+    string source_type = 4;
+    float amount = 5;
+    string about_text = 6;
+}
+
+message StaffTransaction {
+    string id = 1;
+    string sale_id = 2;
+    string staff_id = 3;
+    string tr_type = 4;
+    string source_type = 5;
+    float amount = 6;
+    string about_text = 7;
+    string created_at = 8;
+    string updated_at = 9;
+    string deleted_at = 10;
+}
+
+message CreateStaffTransactionResponse {
+    string id = 1;
+}
+
+message GetStaffTransactionResponse { 
+    StaffTransaction StaffTransaction = 1;
+}
+
+message UpdateStaffTransactionRequest {
+    string id = 1;
+    string sale_id = 2;
+    string staff_id = 3;
+    string tr_type = 4;
+    string source_type = 5;
+    float amount = 6;
+    string about_text = 7;
+}
+
+message ListStaffTransactionRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string search = 3;
+}
+
+message ListStaffTransactionResponse {
+     repeated StaffTransaction StaffTransactions = 1;
+     int32 count = 2;
+}

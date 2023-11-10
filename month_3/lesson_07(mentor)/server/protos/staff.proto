@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package sale;
+option go_package = "genproto/sale";
+
+service TariffService {
+    rpc Create(CreateTariffRequest) returns (CreateTariffResponse) {}
+    rpc Get(IdRequest) returns (GetTariffResponse) {}
+    rpc List(ListTariffsRequest) returns (ListTariffsResponse) {}
+    rpc Update(UpdateTariffRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+enum StaffType {
+    CASHIER = 0;
+    SHOP_ASSISTANT = 1;
+}
+  
+message Staff {
+    string id = 1;
+    string name = 2;
+    StaffType type = 3;
+    string branch_id = 4;
+    string tariff_id = 5;
+    float balance = 6;
+}
+
+// CREATE TABLE "staffs" (
+//   "id" uuid PRIMARY KEY,
+//   "name" varchar not null,
+//   "branch_id" uuid NOT NULL REFERENCES "branches"("id"),
+//   "tariff_id" uuid NOT NULL REFERENCES "tariffs"("id"),
+//   "staff_type" staff_type NOT NULL,
+//   "balance" NUMERIC(12, 2),
+//   "created_at" timestamptz NOT NULL DEFAULT (now()),
+//   "updated_at" timestamptz NOT NULL DEFAULT (now())
+// );

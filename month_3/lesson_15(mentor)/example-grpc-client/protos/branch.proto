@@ -1,0 +1,20 @@
+syntax = "proto3";
+package sale;
+option go_package = "genproto/sale_service";
+
+service BranchService {
+  rpc Create (CreateBranch) returns (CreateResponse) {}
+}
+
+message CreateBranch {
+  string name = 1;
+  string address=2;
+}
+message Branch {
+  string id=1;
+  string name = 2;
+  string address=3;
+}
+message CreateResponse {
+  string id = 1;
+}

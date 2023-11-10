@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "genproto/user_service";
+import "branch.proto";
+
+service ClientService {
+    rpc Create(CreateClientsRequest) returns (Response) {}
+    rpc Get(IdRequest) returns (Clients) {}
+    rpc List(ListClientsRequest) returns (ListClientsResponse) {}
+    rpc Update(UpdateClientsRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+    rpc UpdateOrder(UpdateClientsOrderRequest) returns (Response) {}
+}
+
+message CreateClientsRequest {
+    string firstname = 1;
+    string lastname = 2;
+    string phone = 3;
+    string photo = 4;
+    string birth_date = 5;
+    string discount_type = 6;
+    double discount_amount = 7;
+}
+
+message Clients {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    string phone = 4;
+    string photo = 5;
+    string birth_date =6;
+    string last_ordered_date = 7;
+    int64 total_orders_count = 8;
+    double total_orders_sum = 9;
+    string discount_type = 10;
+    double discount_amount = 11;
+    string created_at = 12;
+    string updated_at = 13;
+}
+
+message UpdateClientsRequest {
+    int32 id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    string phone = 4;
+    string photo = 5;
+    string birth_date = 6;
+    string discount_type = 7;
+    double discount_amount = 8;
+}
+message UpdateClientsOrderRequest {
+    int32 id = 1;
+    int64 total_orders_count = 2;
+    double total_orders_sum = 3;
+}
+
+message ListClientsRequest {
+    int32 limit = 1;
+    int32 page = 2;
+    string firstname = 3;
+    string lastname = 4;
+    string phone = 5;
+    string created_at_from = 6;
+    string created_at_to = 7;
+    string last_ordered_date_from = 8;
+    string last_ordered_date_to = 9;
+    int64 total_orders_sum_from = 10;
+    int64 total_orders_sum_to= 11;
+    int64 total_orders_count_from = 12;
+    int64 total_orders_count_to = 13;
+    string discount_type = 14;
+    string discount_amount_from = 15;
+    string discount_amount_to = 16;
+}
+
+message ListClientsResponse {
+     repeated Clients clients = 1;
+     int32 count = 2;
+}
+

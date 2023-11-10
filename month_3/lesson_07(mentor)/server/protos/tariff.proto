@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package sale;
+option go_package = "genproto/sale";
+import "branch.proto";
+
+service TariffService {
+    rpc Create(CreateTariffRequest) returns (CreateTariffResponse) {}
+    rpc Get(IdRequest) returns (GetTariffResponse) {}
+    rpc List(ListRequest) returns (ListTariffsResponse) {}
+    rpc Update(UpdateTariffRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+enum TariffType {
+    FIXED = 0;
+    PERCENT = 1;
+  }
+  
+  message Tariff {
+    string id = 1;
+    string name = 2;
+    TariffType type = 3;
+    double amount_for_cash = 4;
+    double amount_for_card = 5;
+  }
+  
+  message CreateTariffRequest {
+    string name = 1;
+    TariffType type = 2;
+    double amount_for_cash = 3;
+    double amount_for_card = 4;
+  }
+  
+  message CreateTariffResponse {
+    Tariff tariff = 1;
+  }
+
+message GetTariffResponse {
+    Tariff tariff = 1;
+}
+
+message UpdateTariffRequest {
+    string id = 1;
+    string name = 2;
+    TariffType type = 3;
+    double amount_for_cash = 4;
+    double amount_for_card = 5;
+}
+  
+message ListTariffsResponse {
+    repeated Tariff tariffs = 1;
+    int32 count = 2;
+}

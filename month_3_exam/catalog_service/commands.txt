@@ -1,0 +1,13 @@
+protoc -I=../delivery_protos/catalog_service --go_out=genproto --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/catalog_service/category.proto
+                                          
+protoc -I=../delivery_protos/catalog_service --go_out=genproto --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto --go-grpc_opt=paths=source_relative \
+                                          ../delivery_protos/catalog_service/products.proto
+
+
+migrate create -ext sql -dir ./migrations -seq -digits 3 create_tables
+
+migrate -path ./migrations -database 'postgres://postgres:2511@localhost:5432/catalog_service?sslmode=disable' up
+migrate -path ./migrations -database 'postgres://postgres:2511@localhost:5432/catalog_service?sslmode=disable' down

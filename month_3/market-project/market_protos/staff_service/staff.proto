@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package staff_service;
+option go_package = "genproto/staff_service";
+
+service StaffService {
+    rpc Create(CreateStaffRequest) returns (CreateStaffResponse) {}
+    rpc Get(IdRequest) returns (GetStaffResponse) {}
+    rpc List(ListStaffRequest) returns (ListStaffResponse) {}
+    rpc Update(UpdateStaffRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+  
+message CreateStaffRequest {
+    string name = 1;
+    string branch_id = 2;
+    string tariff_id = 3;
+    string staff_type = 4;
+    string username = 5;
+    string password = 6;
+}
+
+message Staff {
+    string id = 1;
+    string name = 2;
+    string branch_id = 3;
+    string tariff_id = 4;
+    string staff_type = 5;
+    double balance = 6;
+    string username = 7;
+    string password = 8;
+    string created_at = 9;
+    string updated_at = 10;
+}
+
+message CreateStaffResponse {
+    string id = 1;
+}
+
+message GetStaffResponse { 
+    Staff Staff = 1;
+}
+
+message UpdateStaffRequest {
+    string id = 1;
+    string name = 2;
+    string branch_id = 3;
+    string tariff_id = 4;
+    string staff_type = 5;
+    double balance = 6;
+    string username = 7;
+    string password = 8;
+}
+
+message ListStaffRequest {
+    int32 limit = 1;
+    int32 offset = 2;
+    string search = 4;
+}
+
+message ListStaffResponse {
+     repeated Staff Staffs = 1;
+     int32 count = 2;
+}
+
+message Response {
+    string message = 1;
+}
+
+message IdRequest {
+    string id = 1;
+}

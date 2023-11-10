@@ -1,0 +1,294 @@
+definitions:
+  models.CreatePerson:
+    properties:
+      age:
+        type: integer
+      job:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.LoginReq:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  models.LoginRes:
+    properties:
+      token:
+        type: string
+    type: object
+  models.Person:
+    properties:
+      age:
+        type: integer
+      branch_id:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      job:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  response.CreateResponse:
+    properties:
+      id:
+        type: string
+    type: object
+  response.ErrorResp:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: api for create persons
+      parameters:
+      - description: data of person
+        in: body
+        name: person
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LoginRes'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: create person
+      tags:
+      - persons
+  /person:
+    get:
+      consumes:
+      - application/json
+      description: get persons
+      parameters:
+      - default: 10
+        description: limit for response
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - default: 1
+        description: page of req
+        in: query
+        name: page
+        required: true
+        type: integer
+      - description: filter by job
+        enum:
+        - dev
+        - backend
+        - frontend
+        in: query
+        name: job
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Person'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      security:
+      - ApiKeyAuth: []
+      summary: List persons
+      tags:
+      - persons
+    post:
+      consumes:
+      - application/json
+      description: api for create persons
+      parameters:
+      - description: data of person
+        in: body
+        name: person
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePerson'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.CreateResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: create person
+      tags:
+      - persons
+  /person/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get persons
+      parameters:
+      - description: id of person
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Person'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: List persons
+      tags:
+      - persons
+    post:
+      consumes:
+      - application/json
+      description: api for create persons
+      parameters:
+      - description: id of person
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: data of person
+        in: body
+        name: person
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePerson'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: create person
+      tags:
+      - persons
+    put:
+      consumes:
+      - application/json
+      description: api for update persons
+      parameters:
+      - description: id of person
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: data of person
+        in: body
+        name: person
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePerson'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/response.ErrorResp'
+      summary: update person
+      tags:
+      - persons
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

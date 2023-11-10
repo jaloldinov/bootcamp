@@ -1,0 +1,32 @@
+syntax = "proto3";
+package person;
+option go_package = "genproto/person";
+
+service PersonService {
+  rpc Create (CreatePerson) returns (CreateResponse) {}
+  rpc Update (Person) returns (CreateResponse) {}
+  rpc Get (IdReq) returns (Person) {}
+  rpc GetAll (IdReq) returns (Person) {}
+  rpc Delete (IdReq) returns (CreateResponse) {}
+}
+
+message CreatePerson {
+  string name = 1;
+  string address=2;
+}
+message Person {
+  string id=1;
+  string name = 2;
+  string address=3;
+}
+message CreateResponse {
+  string id = 1;
+}
+message IdReq{
+  string id=1;
+}
+
+message GetAllReq{
+  int32 page=1;
+  int32 limit=2;
+}

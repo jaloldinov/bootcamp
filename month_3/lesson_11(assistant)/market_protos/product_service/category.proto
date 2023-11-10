@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package product_service;
+option go_package = "genproto/product_service";
+import "product.proto";
+
+service CategoryService {
+    rpc Create(CreateCategoryRequest) returns (CreateCategoryResponse) {}
+    rpc Get(IdRequest) returns (GetCategoryResponse) {}
+    rpc List(ListCategoryRequest) returns (ListCategoryResponse) {}
+    rpc Update(UpdateCategoryRequest) returns (Response) {}
+    rpc Delete(IdRequest) returns (Response) {}
+}
+
+message CreateCategoryRequest { 
+    string id = 1;
+    string name = 2;
+}
+
+message Category { 
+    string id = 1;
+    string name = 2;
+    string created_at = 3;
+    string updated_at = 4;
+}
+
+message CreateCategoryResponse {
+    string id = 1;
+}
+
+message GetCategoryResponse { 
+    Category Category = 1;
+}
+
+message UpdateCategoryRequest {
+    string id = 1;
+    string name = 2;
+}
+
+message ListCategoryRequest {
+    int32 limit = 1;
+    int32 offset = 2;
+    string search = 3;
+}
+
+message ListCategoryResponse {
+     repeated Category Categoryes = 1;
+     int32 count = 2;
+}

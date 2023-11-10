@@ -1,0 +1,13 @@
+protoc -I=../market_protos/staff_service --go_out=genproto --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto --go-grpc_opt=paths=source_relative \
+                                          ../market_protos/staff_service/staff.proto
+                                          
+protoc -I=../market_protos/staff_service --go_out=genproto --go_opt=paths=source_relative \
+                                          --go-grpc_out=genproto --go-grpc_opt=paths=source_relative \
+                                          ../market_protos/staff_service/tariff.proto
+
+
+migrate create -ext sql -dir ./migrations -seq -digits 3 create_tables
+
+migrate -path ./migrations -database 'postgres://postgres:Muhammad@localhost:5432/postgres?sslmode=disable' up
+migrate -path ./migrations -database 'postgres://postgres:Muhammad@localhost:5432/postgres?sslmode=disable' up
